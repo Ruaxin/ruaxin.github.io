@@ -6,7 +6,7 @@
     <description>Recent content on RUAX的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Mon, 23 Sep 2019 22:25:29 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 24 Sep 2019 23:29:52 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     
@@ -20,6 +20,26 @@
       <description>Hugo is a static site engine written in Go.
 It makes use of a variety of open source projects including:
  Cobra Viper J Walter Weatherman Cast  Learn more and contribute on GitHub.</description>
+    </item>
+    
+    <item>
+      <title>如何用hugo搭建个人博客</title>
+      <link>http://localhost:1313/posts/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</link>
+      <pubDate>Tue, 24 Sep 2019 23:29:52 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</guid>
+      <description>安装hugo  下载hugo并解压到D:\Software\hugo
+ 把D:\Software\hugo\加到PATH
+  快速搭建博客  进入hugo官网，点击Quick Start开始
+ 用cmder执行Step 2，新建一个博客生成器，例：
+hugo new site xxx.github.io-creator  用VSCode打开xxx.github.io-creator，执行Step 3来设置主题，例：
+git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke echo &#39;theme = &amp;quot;ananke&amp;quot;&#39; &amp;gt;&amp;gt; config.toml  用Step 4的代码来创建第一篇博客，例：
+hugo new posts/第一篇博客.md  编辑完内容，把draft：true改false
+ 执行Step 5的代码
+hugo server -D  得到一个本地预览的地址http://localhost:1313/
+ 关于主题的配置，可打开config.toml进行汉化，改标题等，例：
+baseURL = &amp;quot;https://example.org/&amp;quot; languageCode = &amp;quot;zh-Hans&amp;quot; title = &amp;quot;XXX的博客&amp;quot; theme = &amp;quot;ananke&amp;quot;  运行hugo，得到public目录,进入public目录，执行
+git init git add .</description>
     </item>
     
     <item>

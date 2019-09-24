@@ -9,12 +9,17 @@
   
   <url>
     <loc>http://localhost:1313/posts/</loc>
-    <lastmod>2019-09-23T22:25:29+08:00</lastmod>
+    <lastmod>2019-09-24T23:29:52+08:00</lastmod>
   </url>
   
   <url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2019-09-23T22:25:29+08:00</lastmod>
+    <lastmod>2019-09-24T23:29:52+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://localhost:1313/posts/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2019-09-24T23:29:52+08:00</lastmod>
   </url>
   
   <url>
