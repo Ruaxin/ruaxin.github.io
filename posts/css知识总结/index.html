@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>RUAX的博客  | CSS知识总结</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.58.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="CSS知识总结" />
+<meta property="og:description" content="CSS知识总结 1.浏览器渲染原理  根据HTML构建HTML树（DOM） 根据CSS构建CSS树（CSSOM） 将两棵树合并成一棵渲染树（render tree） Layout布局（文档流、盒模型、计算大小和位置） Paint绘制（把边框颜色、文字颜色、阴影等画出来） Compose合成（根据层叠关系展示画面）  2.CSS 动画的两种做法 1.transform  四个常用功能
+ 位移 translate
+ 缩放 scale
+ 选择 rotate
+ 倾斜 skew   具体内容：https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform
+红心动画代码示例（transform）:
+&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;title&gt;JS Bin&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;heart&quot;&gt; &lt;div class=&quot;left&quot;&gt;&lt;/div&gt; &lt;div class=&quot;right&quot;&gt;&lt;/div&gt; &lt;div class=&quot;bottom&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  * { box-sizing: border-box; } #heart { display: inline-block; margin: 100px; position: relative; transition: all 1s; } #heart:hover { transform: scale(1." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" />
+<meta property="article:published_time" content="2019-10-25T07:28:48+08:00" />
+<meta property="article:modified_time" content="2019-10-25T07:28:48+08:00" />
+<meta itemprop="name" content="CSS知识总结">
+<meta itemprop="description" content="CSS知识总结 1.浏览器渲染原理  根据HTML构建HTML树（DOM） 根据CSS构建CSS树（CSSOM） 将两棵树合并成一棵渲染树（render tree） Layout布局（文档流、盒模型、计算大小和位置） Paint绘制（把边框颜色、文字颜色、阴影等画出来） Compose合成（根据层叠关系展示画面）  2.CSS 动画的两种做法 1.transform  四个常用功能
+ 位移 translate
+ 缩放 scale
+ 选择 rotate
+ 倾斜 skew   具体内容：https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform
+红心动画代码示例（transform）:
+&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;title&gt;JS Bin&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;heart&quot;&gt; &lt;div class=&quot;left&quot;&gt;&lt;/div&gt; &lt;div class=&quot;right&quot;&gt;&lt;/div&gt; &lt;div class=&quot;bottom&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  * { box-sizing: border-box; } #heart { display: inline-block; margin: 100px; position: relative; transition: all 1s; } #heart:hover { transform: scale(1.">
+
+
+<meta itemprop="datePublished" content="2019-10-25T07:28:48&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-25T07:28:48&#43;08:00" />
+<meta itemprop="wordCount" content="254">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CSS知识总结"/>
+<meta name="twitter:description" content="CSS知识总结 1.浏览器渲染原理  根据HTML构建HTML树（DOM） 根据CSS构建CSS树（CSSOM） 将两棵树合并成一棵渲染树（render tree） Layout布局（文档流、盒模型、计算大小和位置） Paint绘制（把边框颜色、文字颜色、阴影等画出来） Compose合成（根据层叠关系展示画面）  2.CSS 动画的两种做法 1.transform  四个常用功能
+ 位移 translate
+ 缩放 scale
+ 选择 rotate
+ 倾斜 skew   具体内容：https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform
+红心动画代码示例（transform）:
+&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;title&gt;JS Bin&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;heart&quot;&gt; &lt;div class=&quot;left&quot;&gt;&lt;/div&gt; &lt;div class=&quot;right&quot;&gt;&lt;/div&gt; &lt;div class=&quot;bottom&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  * { box-sizing: border-box; } #heart { display: inline-block; margin: 100px; position: relative; transition: all 1s; } #heart:hover { transform: scale(1."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://localhost:1313/" class="f3 fw2 hover-white no-underline white-90 dib">
+      RUAX的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">CSS知识总结</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-10-25T07:28:48&#43;08:00">October 25, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="css知识总结">CSS知识总结</h1>
+
+<h2 id="1-浏览器渲染原理">1.浏览器渲染原理</h2>
+
+<ol>
+<li>根据HTML构建HTML树（DOM）</li>
+<li>根据CSS构建CSS树（CSSOM）</li>
+<li>将两棵树合并成一棵渲染树（render tree）</li>
+<li>Layout布局（文档流、盒模型、计算大小和位置）</li>
+<li>Paint绘制（把边框颜色、文字颜色、阴影等画出来）</li>
+<li>Compose合成（根据层叠关系展示画面）</li>
+</ol>
+
+<p><img src="https://i.loli.net/2019/10/27/tFSH7KDAibWnUq4.png" alt="1.PNG" /></p>
+
+<h2 id="2-css-动画的两种做法">2.CSS 动画的两种做法</h2>
+
+<h3 id="1-transform">1.transform</h3>
+
+<ul>
+<li>四个常用功能<br />
+
+<ul>
+<li>位移 translate<br /></li>
+<li>缩放 scale<br /></li>
+<li>选择 rotate<br /></li>
+<li>倾斜 skew</li>
+</ul></li>
+</ul>
+
+<p>具体内容：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform">https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform</a></p>
+
+<p>红心动画代码示例（transform）:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;heart&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bottom&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<pre><code>* {
+  box-sizing: border-box;
+}
+#heart {
+  display: inline-block;
+  margin: 100px;
+  position: relative;
+  transition: all 1s;
+}
+#heart:hover {
+  transform: scale(1.2);
+}
+#heart&gt;.left {
+  background: red;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  transform: rotate(45deg) translateX(31px);
+  bottom: 50px;
+  left: -50px;
+  border-radius: 50% 0 0 50%;
+}
+#heart&gt;.right {
+  background: red;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  transform: rotate(45deg) translateY(31px);
+  bottom: 50px;
+  right: -50px;
+  border-radius: 50% 50% 0 0;
+}
+#heart&gt;.bottom {
+  background: red;
+  width: 50px;
+  height: 50px;
+  transform: rotate(45deg);
+}
+</code></pre>
+
+<h3 id="2-animation">2.animation</h3>
+
+<ul>
+<li><p>缩写语法
+animation：时长|过渡方式|延迟|次数|方向|填充模式|是否暂停|动画名</p>
+
+<ul>
+<li>时长：1s或者1000ms</li>
+<li>过渡方式：跟transition取值一样，如linear</li>
+<li>次数：3或者2.4或者infinite</li>
+<li>方向：reverse|alternate|alternate-reverse</li>
+<li>填充模式：none|forwards|backwards|both</li>
+<li>是否暂停：paused|running
+<br /></li>
+</ul></li>
+</ul>
+
+<p>具体内容：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation">https://developer.mozilla.org/zh-CN/docs/Web/CSS/animation</a></p>
+
+<p>红心动画代码示例（animation）:</p>
+
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+  &lt;meta charset=&quot;utf-8&quot;&gt;
+  &lt;title&gt;JS Bin&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+  &lt;div id=&quot;heart&quot;&gt;
+    &lt;div class=&quot;left&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;right&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;bottom&quot;&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+</code></pre>
+
+<pre><code>* {
+  box-sizing: border-box;
+}
+#heart {
+  display: inline-block;
+  margin: 100px;
+  position: relative;
+  animation: .5s heart infinite alternate-reverse;
+}
+@keyframes heart {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.2);
+  }
+}
+#heart&gt;.left {
+  background: red;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  transform: rotate(45deg) translateX(41px);
+  bottom: 50px;
+  left: -50px;
+  border-radius: 50% 0 0 50%;
+}
+#heart&gt;.right {
+  background: red;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  transform: rotate(45deg) translateY(41px);
+  bottom: 50px;
+  right: -50px;
+  border-radius: 50% 50% 0 0;
+}
+#heart&gt;.bottom {
+  background: red;
+  width: 50px;
+  height: 50px;
+  transform: rotate(45deg);
+}
+</code></pre>
+
+<h2 id="3-css动画优化">3.CSS动画优化</h2>
+
+<ol>
+<li>看Google技术文章<a href="https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count">https://developers.google.com/web/fundamentals/performance/rendering/stick-to-compositor-only-properties-and-manage-layer-count</a></li>
+<li>使用requestAnimationFrame代替setTimeout或者setInterval</li>
+<li>使用will-change或translate</li>
+</ol>
+
+<h2 id="4-更新样式">4.更新样式</h2>
+
+<p><img src="https://i.loli.net/2019/10/27/Nkn5IsWHfmDdyoY.png" alt="2.PNG" /></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy; 2019 RUAX的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
