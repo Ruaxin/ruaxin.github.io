@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>RUAX的博客  | 浅析URL</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.58.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="浅析URL" />
+<meta property="og:description" content=" 浅析 URL URL 相关内容 统一资源定位符（英语：Uniform Resource Locator，缩写：URL；或称统一资源定位器、定位地址、URL地址，俗称网页地址或简称网址）是因特网上标准的资源的地址（Address），如同在网络上的门牌。它最初是由蒂姆·伯纳斯-李发明用来作为万维网的地址，现在它已经被万维网联盟编制为因特网标准RFC 1738。
+组成：协议&#43;域名或IP&#43;端口号&#43;路径&#43;查询字符串&#43;锚点  协议：http，https是协议。 IP：1.定位一台设备；2.封装数据报文，以便跟其他设备交流。 域名：com是顶级域名，baidu.com是二级域名（俗称一级域名），www.baidu.com是三级域名（俗称二级域名）。 端口号：以数字方式表示，若为默认值可省略，如HTTP 80；HTTPS 443；FTP 21，一共有65535个端口。 路径：以“/”字符区别路径中的每一个目录名称。 查询字符串：GET模式的窗体参数，以“?”字符为起点，每个参数以“&amp;”隔开，再以“=”分开参数名称与数据，通常以UTF8的URL编码，避开字符冲突的问题。 锚点：以“#”字符为起点，锚点不支持中文，锚点无法在Network面板看到，锚点不会传给服务器  其他总结  DNS 的作用是什么
+域名系统（英语：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。简单来说，域名和IP是通过DNS对应起来。
+ nslookup 命令怎么用
+nslookup命令用于查询域名和IP
+nslookup baidu.com  ping 命令怎么用
+ping命令能得到域名的IP
+ping baidu.com  其他
+ 域名：一个域名可以对应不同IP（均衡负载），一个域名可以对应不同IP（共享主机）。 端口：0到1023端口是系统用的，管理员权限才能用1024端口，http-server默认8080端口，端口如果被占用，只能换一个，IP和端口缺一不可。 curl命令：用curl可以发出HTTP请求,url会被curl工具重写，先请求DNS获得IP,再进行TCP连接，TCP连接成功后，开始发送HTTP请求，响应结束后，关闭TCP连接
+curl -v http://baidu.com curl -s -v -- https://baidu.com    " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/%E6%B5%85%E6%9E%90url/" />
+<meta property="article:published_time" content="2019-10-28T22:28:25+08:00" />
+<meta property="article:modified_time" content="2019-10-28T22:28:25+08:00" />
+<meta itemprop="name" content="浅析URL">
+<meta itemprop="description" content=" 浅析 URL URL 相关内容 统一资源定位符（英语：Uniform Resource Locator，缩写：URL；或称统一资源定位器、定位地址、URL地址，俗称网页地址或简称网址）是因特网上标准的资源的地址（Address），如同在网络上的门牌。它最初是由蒂姆·伯纳斯-李发明用来作为万维网的地址，现在它已经被万维网联盟编制为因特网标准RFC 1738。
+组成：协议&#43;域名或IP&#43;端口号&#43;路径&#43;查询字符串&#43;锚点  协议：http，https是协议。 IP：1.定位一台设备；2.封装数据报文，以便跟其他设备交流。 域名：com是顶级域名，baidu.com是二级域名（俗称一级域名），www.baidu.com是三级域名（俗称二级域名）。 端口号：以数字方式表示，若为默认值可省略，如HTTP 80；HTTPS 443；FTP 21，一共有65535个端口。 路径：以“/”字符区别路径中的每一个目录名称。 查询字符串：GET模式的窗体参数，以“?”字符为起点，每个参数以“&amp;”隔开，再以“=”分开参数名称与数据，通常以UTF8的URL编码，避开字符冲突的问题。 锚点：以“#”字符为起点，锚点不支持中文，锚点无法在Network面板看到，锚点不会传给服务器  其他总结  DNS 的作用是什么
+域名系统（英语：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。简单来说，域名和IP是通过DNS对应起来。
+ nslookup 命令怎么用
+nslookup命令用于查询域名和IP
+nslookup baidu.com  ping 命令怎么用
+ping命令能得到域名的IP
+ping baidu.com  其他
+ 域名：一个域名可以对应不同IP（均衡负载），一个域名可以对应不同IP（共享主机）。 端口：0到1023端口是系统用的，管理员权限才能用1024端口，http-server默认8080端口，端口如果被占用，只能换一个，IP和端口缺一不可。 curl命令：用curl可以发出HTTP请求,url会被curl工具重写，先请求DNS获得IP,再进行TCP连接，TCP连接成功后，开始发送HTTP请求，响应结束后，关闭TCP连接
+curl -v http://baidu.com curl -s -v -- https://baidu.com    ">
+
+
+<meta itemprop="datePublished" content="2019-10-28T22:28:25&#43;08:00" />
+<meta itemprop="dateModified" content="2019-10-28T22:28:25&#43;08:00" />
+<meta itemprop="wordCount" content="47">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="浅析URL"/>
+<meta name="twitter:description" content=" 浅析 URL URL 相关内容 统一资源定位符（英语：Uniform Resource Locator，缩写：URL；或称统一资源定位器、定位地址、URL地址，俗称网页地址或简称网址）是因特网上标准的资源的地址（Address），如同在网络上的门牌。它最初是由蒂姆·伯纳斯-李发明用来作为万维网的地址，现在它已经被万维网联盟编制为因特网标准RFC 1738。
+组成：协议&#43;域名或IP&#43;端口号&#43;路径&#43;查询字符串&#43;锚点  协议：http，https是协议。 IP：1.定位一台设备；2.封装数据报文，以便跟其他设备交流。 域名：com是顶级域名，baidu.com是二级域名（俗称一级域名），www.baidu.com是三级域名（俗称二级域名）。 端口号：以数字方式表示，若为默认值可省略，如HTTP 80；HTTPS 443；FTP 21，一共有65535个端口。 路径：以“/”字符区别路径中的每一个目录名称。 查询字符串：GET模式的窗体参数，以“?”字符为起点，每个参数以“&amp;”隔开，再以“=”分开参数名称与数据，通常以UTF8的URL编码，避开字符冲突的问题。 锚点：以“#”字符为起点，锚点不支持中文，锚点无法在Network面板看到，锚点不会传给服务器  其他总结  DNS 的作用是什么
+域名系统（英语：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。简单来说，域名和IP是通过DNS对应起来。
+ nslookup 命令怎么用
+nslookup命令用于查询域名和IP
+nslookup baidu.com  ping 命令怎么用
+ping命令能得到域名的IP
+ping baidu.com  其他
+ 域名：一个域名可以对应不同IP（均衡负载），一个域名可以对应不同IP（共享主机）。 端口：0到1023端口是系统用的，管理员权限才能用1024端口，http-server默认8080端口，端口如果被占用，只能换一个，IP和端口缺一不可。 curl命令：用curl可以发出HTTP请求,url会被curl工具重写，先请求DNS获得IP,再进行TCP连接，TCP连接成功后，开始发送HTTP请求，响应结束后，关闭TCP连接
+curl -v http://baidu.com curl -s -v -- https://baidu.com    "/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://localhost:1313/" class="f3 fw2 hover-white no-underline white-90 dib">
+      RUAX的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">浅析URL</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-10-28T22:28:25&#43;08:00">October 28, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="浅析-url">浅析 URL</h1>
+
+<h2 id="url-相关内容">URL 相关内容</h2>
+
+<p>统一资源定位符（英语：Uniform Resource Locator，缩写：URL；或称统一资源定位器、定位地址、URL地址，俗称网页地址或简称网址）是因特网上标准的资源的地址（Address），如同在网络上的门牌。它最初是由蒂姆·伯纳斯-李发明用来作为万维网的地址，现在它已经被万维网联盟编制为因特网标准RFC 1738。</p>
+
+<h3 id="组成-协议-域名或ip-端口号-路径-查询字符串-锚点">组成：协议+域名或IP+端口号+路径+查询字符串+锚点</h3>
+
+<ul>
+<li>协议：http，https是协议。</li>
+<li>IP：1.定位一台设备；2.封装数据报文，以便跟其他设备交流。</li>
+<li>域名：com是顶级域名，baidu.com是二级域名（俗称一级域名），www.baidu.com是三级域名（俗称二级域名）。</li>
+<li>端口号：以数字方式表示，若为默认值可省略，如HTTP 80；HTTPS 443；FTP 21，一共有65535个端口。</li>
+<li>路径：以“/”字符区别路径中的每一个目录名称。</li>
+<li>查询字符串：GET模式的窗体参数，以“?”字符为起点，每个参数以“&amp;”隔开，再以“=”分开参数名称与数据，通常以UTF8的URL编码，避开字符冲突的问题。</li>
+<li>锚点：以“#”字符为起点，锚点不支持中文，锚点无法在Network面板看到，锚点不会传给服务器</li>
+</ul>
+
+<h2 id="其他总结">其他总结</h2>
+
+<ol>
+<li><p>DNS 的作用是什么<br />
+域名系统（英语：Domain Name System，缩写：DNS）是互联网的一项服务。它作为将域名和IP地址相互映射的一个分布式数据库，能够使人更方便地访问互联网。简单来说，域名和IP是通过DNS对应起来。</p></li>
+
+<li><p>nslookup 命令怎么用<br />
+nslookup命令用于查询域名和IP</p>
+
+<pre><code>nslookup baidu.com
+</code></pre></li>
+
+<li><p>ping 命令怎么用<br />
+ping命令能得到域名的IP</p>
+
+<pre><code>ping baidu.com
+</code></pre></li>
+
+<li><p>其他</p>
+
+<ul>
+<li>域名：一个域名可以对应不同IP（均衡负载），一个域名可以对应不同IP（共享主机）。</li>
+<li>端口：0到1023端口是系统用的，管理员权限才能用1024端口，http-server默认8080端口，端口如果被占用，只能换一个，IP和端口缺一不可。</li>
+
+<li><p>curl命令：用curl可以发出HTTP请求,url会被curl工具重写，先请求DNS获得IP,再进行TCP连接，TCP连接成功后，开始发送HTTP请求，响应结束后，关闭TCP连接</p>
+
+<pre><code>curl -v http://baidu.com
+curl -s -v -- https://baidu.com
+</code></pre></li>
+</ul></li>
+</ol>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy; 2019 RUAX的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
