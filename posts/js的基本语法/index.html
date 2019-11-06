@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>RUAX的博客  | JS的基本语法</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.58.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="JS的基本语法" />
+<meta property="og:description" content="JS的基本语法 1. 表达式与语句  表达式
+1&#43;2表达式的值为3
+add(1,2)表达式的值为函数的返回值
+console.log表达式的值为函数本身
+console.log(3)表达式的值为undefined
+ 语句
+3. 二者的区别 表达式一般都有值，语句可能有也可能没有 语句一般会改变环境（声明、赋值） 上面两句话并不是绝对的 4. 关于空格的补充 大部分空格没有实际意义 var a = 1和var a=1没有区别 加回车大部分时候也不影响 只有return后面不能加回车 ## 2. 标识符 变量名就是是标识符。JS的标识符对大小写敏感，所以a和A是两个不同的标识符。 规则： 1. 第一个字符，可以是Unicode字母或$或_或中文 2. 后面的字符，处理上面的，还可以有数字 标识符错误示例： ![BSF.png](https://i.loli.net/2019/11/06/8qPcxb2Kf5sjpCY.png) ## 3. if else 语句 语法: 1. if(表达式){语句1}else{语句2} 2. {}可以在只有一句时省略 代码示例：   if (m === 3) { // 满足条件时，执行的语句 } else { // 不满足条件时，执行的语句 }
+**if else**(else代码块总是与离自己最近的那个if语句配对):  if (m === 0) { // &hellip; } else if (m === 1) { // &hellip; } else if (m === 2) { // &hellip; } else { // &hellip; }" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" />
+<meta property="article:published_time" content="2019-11-06T20:33:22+08:00" />
+<meta property="article:modified_time" content="2019-11-06T20:33:22+08:00" />
+<meta itemprop="name" content="JS的基本语法">
+<meta itemprop="description" content="JS的基本语法 1. 表达式与语句  表达式
+1&#43;2表达式的值为3
+add(1,2)表达式的值为函数的返回值
+console.log表达式的值为函数本身
+console.log(3)表达式的值为undefined
+ 语句
+3. 二者的区别 表达式一般都有值，语句可能有也可能没有 语句一般会改变环境（声明、赋值） 上面两句话并不是绝对的 4. 关于空格的补充 大部分空格没有实际意义 var a = 1和var a=1没有区别 加回车大部分时候也不影响 只有return后面不能加回车 ## 2. 标识符 变量名就是是标识符。JS的标识符对大小写敏感，所以a和A是两个不同的标识符。 规则： 1. 第一个字符，可以是Unicode字母或$或_或中文 2. 后面的字符，处理上面的，还可以有数字 标识符错误示例： ![BSF.png](https://i.loli.net/2019/11/06/8qPcxb2Kf5sjpCY.png) ## 3. if else 语句 语法: 1. if(表达式){语句1}else{语句2} 2. {}可以在只有一句时省略 代码示例：   if (m === 3) { // 满足条件时，执行的语句 } else { // 不满足条件时，执行的语句 }
+**if else**(else代码块总是与离自己最近的那个if语句配对):  if (m === 0) { // &hellip; } else if (m === 1) { // &hellip; } else if (m === 2) { // &hellip; } else { // &hellip; }">
+
+
+<meta itemprop="datePublished" content="2019-11-06T20:33:22&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-06T20:33:22&#43;08:00" />
+<meta itemprop="wordCount" content="266">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JS的基本语法"/>
+<meta name="twitter:description" content="JS的基本语法 1. 表达式与语句  表达式
+1&#43;2表达式的值为3
+add(1,2)表达式的值为函数的返回值
+console.log表达式的值为函数本身
+console.log(3)表达式的值为undefined
+ 语句
+3. 二者的区别 表达式一般都有值，语句可能有也可能没有 语句一般会改变环境（声明、赋值） 上面两句话并不是绝对的 4. 关于空格的补充 大部分空格没有实际意义 var a = 1和var a=1没有区别 加回车大部分时候也不影响 只有return后面不能加回车 ## 2. 标识符 变量名就是是标识符。JS的标识符对大小写敏感，所以a和A是两个不同的标识符。 规则： 1. 第一个字符，可以是Unicode字母或$或_或中文 2. 后面的字符，处理上面的，还可以有数字 标识符错误示例： ![BSF.png](https://i.loli.net/2019/11/06/8qPcxb2Kf5sjpCY.png) ## 3. if else 语句 语法: 1. if(表达式){语句1}else{语句2} 2. {}可以在只有一句时省略 代码示例：   if (m === 3) { // 满足条件时，执行的语句 } else { // 不满足条件时，执行的语句 }
+**if else**(else代码块总是与离自己最近的那个if语句配对):  if (m === 0) { // &hellip; } else if (m === 1) { // &hellip; } else if (m === 2) { // &hellip; } else { // &hellip; }"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://localhost:1313/" class="f3 fw2 hover-white no-underline white-90 dib">
+      RUAX的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">JS的基本语法</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-11-06T20:33:22&#43;08:00">November 6, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="js的基本语法">JS的基本语法</h1>
+
+<h2 id="1-表达式与语句">1. 表达式与语句</h2>
+
+<ol>
+<li><p>表达式<br />
+1+2表达式的<strong>值</strong>为3<br />
+add(1,2)表达式的值为函数的<strong>返回值</strong><br />
+console.log表达式的值为<strong>函数本身</strong><br />
+console.log(3)表达式的值为undefined</p></li>
+
+<li><p>语句</p>
+
+<pre><code class="language-var">
+3. 二者的区别  
+表达式一般都有值，语句可能有也可能没有  
+语句一般会改变环境（声明、赋值）  
+上面两句话并不是绝对的
+
+4. 关于空格的补充  
+大部分空格没有实际意义  
+var a = 1和var a=1没有区别  
+加回车大部分时候也不影响  
+只有return后面不能加回车
+
+
+## 2. 标识符
+变量名就是是标识符。JS的标识符对大小写敏感，所以a和A是两个不同的标识符。  
+规则：  
+1. 第一个字符，可以是Unicode字母或$或_或中文  
+2. 后面的字符，处理上面的，还可以有数字  
+标识符错误示例：  
+![BSF.png](https://i.loli.net/2019/11/06/8qPcxb2Kf5sjpCY.png)  
+
+## 3. if else 语句
+语法:
+1. if(表达式){语句1}else{语句2}
+2. {}可以在只有一句时省略  
+
+代码示例：
+</code></pre></li>
+</ol>
+
+<p>if (m === 3) {
+  // 满足条件时，执行的语句
+} else {
+  // 不满足条件时，执行的语句
+}</p>
+
+<pre><code>**if else**(else代码块总是与离自己最近的那个if语句配对):
+</code></pre>
+
+<p>if (m === 0) {
+  // &hellip;
+} else if (m === 1) {
+  // &hellip;
+} else if (m === 2) {
+  // &hellip;
+} else {
+  // &hellip;
+}</p>
+
+<pre><code>
+## 4. while 和 for 语句
+white 语法:  
+1. white(表达式){语句}
+2. 判断表达式的真假
+3. 当表达式为真，执行语句
+4. 当表达式为假，执行后面的语句
+5. 执行完再次判断表达式的真假
+
+代码示例：
+</code></pre>
+
+<p>var i = 0;</p>
+
+<p>while (i &lt; 100) {
+  console.log(&lsquo;i 当前为：&rsquo; + i);
+  i = i + 1;
+}</p>
+
+<pre><code>for 语法:  
+1. for(语句1;表达式2;语句3){循环体}
+2. 先执行语句1
+3. 然后判断表达式2
+4. 如果为真，执行循环体，然后执行语句3
+5. 如果为假，直接退出循环，执行后面的语句
+
+代码示例：
+</code></pre>
+
+<p>vvar x = 3;
+for (var i = 0; i &lt; x; i++) {
+  console.log(i);
+}</p>
+
+<pre><code>## 5. break 和 continue 语句
+
+1. break语句用于跳出代码块或循环。(退出所有循环)
+2. continue语句用于立即终止本轮循环，返回循环结构的头部，开始下一轮循环。(退出当前一次循环)
+
+break示例：
+</code></pre>
+
+<p>var i = 0;</p>
+
+<p>while(i &lt; 100) {
+  console.log(&lsquo;i 当前为：&rsquo; + i);
+  i++;
+  if (i === 10) break;
+}
+//上面代码只会执行10次循环，一旦i等于10，就会跳出循环</p>
+
+<pre><code>
+continue示例：
+</code></pre>
+
+<p>var i = 0;</p>
+
+<p>while (i &lt; 100){
+  i++;
+  if (i % 2 === 0) continue;
+  console.log(&lsquo;i 当前为：&rsquo; + i);
+}
+//上面代码只有在i为奇数时，才会输出i的值。如果i为偶数，则直接进入下一轮循环</p>
+
+<pre><code>
+## 6. label
+语法:
+</code></pre>
+
+<p>foo: {
+    console.log(1);
+    break foo;
+    console.log(&lsquo;这行不会输出&rsquo;)
+}
+console.log(2);</p>
+
+<pre><code>面试考题：
+</code></pre>
+
+<p>{
+    foo: 1
+}</p>
+
+<pre><code>这并不是一个对象，这是一个标签，标签的内容是1。
+
+## 7. switch语句
+语法：
+</code></pre>
+
+<p>switch (fruit) {
+  case &ldquo;banana&rdquo;:
+    // &hellip;
+    break;
+  case &ldquo;apple&rdquo;:
+    // &hellip;
+    break;
+  default:
+    // &hellip;
+}
+```</p>
+
+<h2 id="8-其他简写语句">8. 其他简写语句</h2>
+
+<ol>
+<li>问号冒号表达式<br />
+表达式1?表达式2:表达式3</li>
+<li>&amp;&amp;短路逻辑<br />
+A&amp;&amp;B&amp;&amp;C&amp;&amp;D取第一个假值或D<br />
+并不会取true/false</li>
+<li>||短路逻辑<br />
+A||B||C||D取第一个真值或D<br />
+并不会取true/false</li>
+</ol>
+
+<p>关于&amp;&amp;的逻辑图：<br />
+<img src="https://i.loli.net/2019/11/06/pcq8jsKtiEN4Dmo.png" alt="BB.png" /></p>
+
+<p><strong>资料来源1：饥人谷</strong><br />
+<strong>资料来源2：<a href="https://wangdoc.com/javascript/basic/grammar.html">https://wangdoc.com/javascript/basic/grammar.html</a></strong></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy; 2019 RUAX的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

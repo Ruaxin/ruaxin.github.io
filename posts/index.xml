@@ -6,10 +6,26 @@
     <description>Recent content in Posts on RUAX的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Thu, 31 Oct 2019 22:25:18 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 06 Nov 2019 20:33:22 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS的基本语法</title>
+      <link>http://localhost:1313/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</link>
+      <pubDate>Wed, 06 Nov 2019 20:33:22 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/</guid>
+      <description>JS的基本语法 1. 表达式与语句  表达式
+1+2表达式的值为3
+add(1,2)表达式的值为函数的返回值
+console.log表达式的值为函数本身
+console.log(3)表达式的值为undefined
+ 语句
+3. 二者的区别 表达式一般都有值，语句可能有也可能没有 语句一般会改变环境（声明、赋值） 上面两句话并不是绝对的 4. 关于空格的补充 大部分空格没有实际意义 var a = 1和var a=1没有区别 加回车大部分时候也不影响 只有return后面不能加回车 ## 2. 标识符 变量名就是是标识符。JS的标识符对大小写敏感，所以a和A是两个不同的标识符。 规则： 1. 第一个字符，可以是Unicode字母或$或_或中文 2. 后面的字符，处理上面的，还可以有数字 标识符错误示例： ![BSF.png](https://i.loli.net/2019/11/06/8qPcxb2Kf5sjpCY.png) ## 3. if else 语句 语法: 1. if(表达式){语句1}else{语句2} 2. {}可以在只有一句时省略 代码示例：   if (m === 3) { // 满足条件时，执行的语句 } else { // 不满足条件时，执行的语句 }
+**if else**(else代码块总是与离自己最近的那个if语句配对):  if (m === 0) { // &amp;hellip; } else if (m === 1) { // &amp;hellip; } else if (m === 2) { // &amp;hellip; } else { // &amp;hellip; }</description>
+    </item>
     
     <item>
       <title>JavaScript的诞生</title>

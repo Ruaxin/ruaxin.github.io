@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:1313/" />
 
-<meta property="og:updated_time" content="2019-10-31T22:25:18+08:00" />
+<meta property="og:updated_time" content="2019-11-06T20:33:22+08:00" />
 <meta itemprop="name" content="RUAX的博客">
 <meta itemprop="description" content="">
 
@@ -130,6 +130,37 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="color-inherit dim link">
+            JS的基本语法
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          JS的基本语法 1. 表达式与语句  表达式
+1+2表达式的值为3
+add(1,2)表达式的值为函数的返回值
+console.log表达式的值为函数本身
+console.log(3)表达式的值为undefined
+ 语句
+3. 二者的区别 表达式一般都有值，语句可能有也可能没有 语句一般会改变环境（声明、赋值） 上面两句话并不是绝对的 4. 关于空格的补充 大部分空格没有实际意义 var a = 1和var a=1没有区别 加回车大部分时候也不影响 只有return后面不能加回车 ## 2. 标识符 变量名就是是标识符。JS的标识符对大小写敏感，所以a和A是两个不同的标识符。 规则： 1. 第一个字符，可以是Unicode字母或$或_或中文 2. 后面的字符，处理上面的，还可以有数字 标识符错误示例： ![BSF.png](https://i.loli.net/2019/11/06/8qPcxb2Kf5sjpCY.png) ## 3. if else 语句 语法: 1. if(表达式){语句1}else{语句2} 2. {}可以在只有一句时省略 代码示例：   if (m === 3) { // 满足条件时，执行的语句 } else { // 不满足条件时，执行的语句 }
+**if else**(else代码块总是与离自己最近的那个if语句配对):  if (m === 0) { // &hellip; } else if (m === 1) { // &hellip; } else if (m === 2) { // &hellip; } else { // &hellip; }
+        </div>
+          <a href="/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" class="color-inherit dim link">
             JavaScript的诞生
             </a>
@@ -181,42 +212,18 @@ curl -v http://baidu.com curl -s -v -- https://baidu.com    资料来源：饥�
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="color-inherit dim link">
-            CSS知识总结
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          CSS知识总结 1.浏览器渲染原理  根据HTML构建HTML树（DOM） 根据CSS构建CSS树（CSSOM） 将两棵树合并成一棵渲染树（render tree） Layout布局（文档流、盒模型、计算大小和位置） Paint绘制（把边框颜色、文字颜色、阴影等画出来） Compose合成（根据层叠关系展示画面）  2.CSS 动画的两种做法 1.transform  四个常用功能
- 位移 translate
- 缩放 scale
- 选择 rotate
- 倾斜 skew   具体内容：https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform
-红心动画代码示例（transform）:
-&lt;!DOCTYPE html&gt; &lt;html&gt; &lt;head&gt; &lt;meta charset=&quot;utf-8&quot;&gt; &lt;title&gt;JS Bin&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div id=&quot;heart&quot;&gt; &lt;div class=&quot;left&quot;&gt;&lt;/div&gt; &lt;div class=&quot;right&quot;&gt;&lt;/div&gt; &lt;div class=&quot;bottom&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;  * { box-sizing: border-box; } #heart { display: inline-block; margin: 100px; position: relative; transition: all 1s; } #heart:hover { transform: scale(1.
-        </div>
-          <a href="/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
+              CSS知识总结
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/html%E5%B8%B8%E7%94%A8%E6%A0%87%E7%AD%BE/" class="link black dim">
