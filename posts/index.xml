@@ -28,9 +28,8 @@ console.dir(obj)  写法2：
 obj.__proto__  5.两种方法查看单个属性 中括号语法：
 obj[&#39;key&#39;]  点语法：
 obj.key  重点
- obj.name不等价于obj[name]```
-name是字符串，而不是变量
-4 如何修改或增加对象的属性 1.直接赋值 let obj = {name: &#39;frank&#39;} obj.</description>
+- obj.name 等价于 obj[&amp;lsquo;name&amp;rsquo;]
+- obj.name 不等价于 obj[name]</description>
     </item>
     
     <item>
@@ -45,7 +44,7 @@ add(1,2)表达式的值为函数的返回值
 console.log表达式的值为函数本身
 console.log(3)表达式的值为undefined
  语句
-var a = 1  是一个语句
+var a = 1 是一个语句
  二者的区别
 表达式一般都有值，语句可能有也可能没有
 语句一般会改变环境（声明、赋值）
@@ -62,7 +61,8 @@ var a = 1和var a=1没有区别
 标识符错误示例：
 3. if else 语句 语法: 1. if(表达式){语句1}else{语句2} 2. {}可以在只有一句时省略
 代码示例：
-if (m === 3) { // 满足条件时，执行的语句 } else { // 不满足条件时，执行的语句 }  if else(else代码块总是与离自己最近的那个if语句配对):</description>
+if (m === 3) { // 满足条件时，执行的语句 } else { // 不满足条件时，执行的语句 }  if else(else代码块总是与离自己最近的那个if语句配对):
+if (m === 0) { // .</description>
     </item>
     
     <item>
