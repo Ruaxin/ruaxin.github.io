@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>RUAX的博客  | JS对象基本用法</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.58.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="JS对象基本用法" />
+<meta property="og:description" content="JS对象基本用法 1 声明对象的两种语法 写法1：
+let obj = {&#39;name&#39;: &#39;frank&#39;, &#39;age&#39;: 18}  写法2：
+let obj = new Objext({&#39;name&#39;: &#39;frank&#39;})  细节：
+- 键名是字符串，不是标识符，可以包括任意字符 - 引号可省略，省略之后就只能写标识符 - 就算引号省略了，键名也还是字符串
+2 如何删除对象的属性 写法1：
+delete obj.xxx  写法2：
+delete obj[&#39;xxx&#39;]  3 如何查看对象的属性 1.查看自身所有属性 Object.keys(obj)  2.查看自身所有属性的值 Object.values(obj)  3.查看自身所有属性和值 Object.entries(obj)  4.查看自身&#43;共有属性 写法1：
+console.dir(obj)  写法2：
+obj.__proto__  5.两种方法查看单个属性 中括号语法：
+obj[&#39;key&#39;]  点语法：
+obj.key  重点
+ obj.name不等价于obj[name]```
+name是字符串，而不是变量
+4 如何修改或增加对象的属性 1.直接赋值 let obj = {name: &#39;frank&#39;} obj." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" />
+<meta property="article:published_time" content="2019-11-10T12:05:40+08:00" />
+<meta property="article:modified_time" content="2019-11-10T12:05:40+08:00" />
+<meta itemprop="name" content="JS对象基本用法">
+<meta itemprop="description" content="JS对象基本用法 1 声明对象的两种语法 写法1：
+let obj = {&#39;name&#39;: &#39;frank&#39;, &#39;age&#39;: 18}  写法2：
+let obj = new Objext({&#39;name&#39;: &#39;frank&#39;})  细节：
+- 键名是字符串，不是标识符，可以包括任意字符 - 引号可省略，省略之后就只能写标识符 - 就算引号省略了，键名也还是字符串
+2 如何删除对象的属性 写法1：
+delete obj.xxx  写法2：
+delete obj[&#39;xxx&#39;]  3 如何查看对象的属性 1.查看自身所有属性 Object.keys(obj)  2.查看自身所有属性的值 Object.values(obj)  3.查看自身所有属性和值 Object.entries(obj)  4.查看自身&#43;共有属性 写法1：
+console.dir(obj)  写法2：
+obj.__proto__  5.两种方法查看单个属性 中括号语法：
+obj[&#39;key&#39;]  点语法：
+obj.key  重点
+ obj.name不等价于obj[name]```
+name是字符串，而不是变量
+4 如何修改或增加对象的属性 1.直接赋值 let obj = {name: &#39;frank&#39;} obj.">
+
+
+<meta itemprop="datePublished" content="2019-11-10T12:05:40&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-10T12:05:40&#43;08:00" />
+<meta itemprop="wordCount" content="103">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JS对象基本用法"/>
+<meta name="twitter:description" content="JS对象基本用法 1 声明对象的两种语法 写法1：
+let obj = {&#39;name&#39;: &#39;frank&#39;, &#39;age&#39;: 18}  写法2：
+let obj = new Objext({&#39;name&#39;: &#39;frank&#39;})  细节：
+- 键名是字符串，不是标识符，可以包括任意字符 - 引号可省略，省略之后就只能写标识符 - 就算引号省略了，键名也还是字符串
+2 如何删除对象的属性 写法1：
+delete obj.xxx  写法2：
+delete obj[&#39;xxx&#39;]  3 如何查看对象的属性 1.查看自身所有属性 Object.keys(obj)  2.查看自身所有属性的值 Object.values(obj)  3.查看自身所有属性和值 Object.entries(obj)  4.查看自身&#43;共有属性 写法1：
+console.dir(obj)  写法2：
+obj.__proto__  5.两种方法查看单个属性 中括号语法：
+obj[&#39;key&#39;]  点语法：
+obj.key  重点
+ obj.name不等价于obj[name]```
+name是字符串，而不是变量
+4 如何修改或增加对象的属性 1.直接赋值 let obj = {name: &#39;frank&#39;} obj."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://localhost:1313/" class="f3 fw2 hover-white no-underline white-90 dib">
+      RUAX的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">JS对象基本用法</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-11-10T12:05:40&#43;08:00">November 10, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="js对象基本用法">JS对象基本用法</h1>
+
+<h2 id="1-声明对象的两种语法">1 声明对象的两种语法</h2>
+
+<p>写法1：</p>
+
+<pre><code>let obj = {'name': 'frank', 'age': 18}
+</code></pre>
+
+<p>写法2：</p>
+
+<pre><code>let obj = new Objext({'name': 'frank'})
+</code></pre>
+
+<p>细节：<br />
+- 键名是字符串，不是标识符，可以包括任意字符
+- 引号可省略，省略之后就只能写标识符
+- 就算引号省略了，键名也还是字符串</p>
+
+<h2 id="2-如何删除对象的属性">2 如何删除对象的属性</h2>
+
+<p>写法1：</p>
+
+<pre><code>delete obj.xxx
+</code></pre>
+
+<p>写法2：</p>
+
+<pre><code>delete obj['xxx']
+</code></pre>
+
+<h2 id="3-如何查看对象的属性">3 如何查看对象的属性</h2>
+
+<h3 id="1-查看自身所有属性">1.查看自身所有属性</h3>
+
+<pre><code>Object.keys(obj)
+</code></pre>
+
+<h3 id="2-查看自身所有属性的值">2.查看自身所有属性的值</h3>
+
+<pre><code>Object.values(obj)
+</code></pre>
+
+<h3 id="3-查看自身所有属性和值">3.查看自身所有属性和值</h3>
+
+<pre><code>Object.entries(obj)
+</code></pre>
+
+<h3 id="4-查看自身-共有属性">4.查看自身+共有属性</h3>
+
+<p>写法1：</p>
+
+<pre><code>console.dir(obj)
+</code></pre>
+
+<p>写法2：</p>
+
+<pre><code>obj.__proto__
+</code></pre>
+
+<h3 id="5-两种方法查看单个属性">5.两种方法查看单个属性</h3>
+
+<p>中括号语法：</p>
+
+<pre><code>obj['key']
+</code></pre>
+
+<p>点语法：</p>
+
+<pre><code>obj.key
+</code></pre>
+
+<p><strong>重点</strong></p>
+
+<pre><code class="language-obj.name```等价于```obj['name']```"></code></pre>
+
+<p>obj.name<code>不等价于</code>obj[name]```<br />
+name是字符串，而不是变量</p>
+
+<h2 id="4-如何修改或增加对象的属性">4 如何修改或增加对象的属性</h2>
+
+<h3 id="1-直接赋值">1.直接赋值</h3>
+
+<pre><code>let obj = {name: 'frank'}
+obj.name = 'frank'
+obj['name'] = 'frank'
+obj['na' + 'me'] = 'frank'
+let key = 'name';obj[key] = 'frank'
+</code></pre>
+
+<h3 id="2-批量赋值">2.批量赋值</h3>
+
+<pre><code>Object.assign(obj, {age:18,gender:'nam'})
+</code></pre>
+
+<h3 id="3-共有属性的修改法">3.共有属性的修改法</h3>
+
+<pre><code>let common = {kind:'human'}
+let obj = Object.create(common)
+</code></pre>
+
+<h2 id="5-name-in-obj和obj-hasownproperty-name-的区别">5 &lsquo;name&rsquo; in obj和obj.hasOwnProperty(&lsquo;name&rsquo;) 的区别</h2>
+
+<p>判断是否有这个属性是用</p>
+
+<pre><code>'name' in obj
+</code></pre>
+
+<p>判断一个属性是自身的还是共有的用</p>
+
+<pre><code>obj.hasOwnProperty('name')
+</code></pre>
+
+<p><strong>资料来源：饥人谷</strong></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy; 2019 RUAX的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

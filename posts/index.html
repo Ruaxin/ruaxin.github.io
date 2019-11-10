@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:1313/posts/" />
 
-<meta property="og:updated_time" content="2019-11-06T20:33:22+08:00" />
+<meta property="og:updated_time" content="2019-11-10T12:05:40+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -104,6 +104,34 @@
   <div class="bg-white mb3 pa4 gray overflow-hidden">
     <span class="f6 db">Posts</span>
     <h1 class="f3 near-black">
+      <a href="/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="link black dim">
+        JS对象基本用法
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      JS对象基本用法 1 声明对象的两种语法 写法1：
+let obj = {'name': 'frank', 'age': 18}  写法2：
+let obj = new Objext({'name': 'frank'})  细节：
+- 键名是字符串，不是标识符，可以包括任意字符 - 引号可省略，省略之后就只能写标识符 - 就算引号省略了，键名也还是字符串
+2 如何删除对象的属性 写法1：
+delete obj.xxx  写法2：
+delete obj['xxx']  3 如何查看对象的属性 1.查看自身所有属性 Object.keys(obj)  2.查看自身所有属性的值 Object.values(obj)  3.查看自身所有属性和值 Object.entries(obj)  4.查看自身+共有属性 写法1：
+console.dir(obj)  写法2：
+obj.__proto__  5.两种方法查看单个属性 中括号语法：
+obj['key']  点语法：
+obj.key  重点
+ obj.name不等价于obj[name]```
+name是字符串，而不是变量
+4 如何修改或增加对象的属性 1.直接赋值 let obj = {name: 'frank'} obj.
+    </div>
+  </div>
+</div>
+</div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
       <a href="/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="link black dim">
         JS的基本语法
       </a>
@@ -115,8 +143,24 @@ add(1,2)表达式的值为函数的返回值
 console.log表达式的值为函数本身
 console.log(3)表达式的值为undefined
  语句
-3. 二者的区别 表达式一般都有值，语句可能有也可能没有 语句一般会改变环境（声明、赋值） 上面两句话并不是绝对的 4. 关于空格的补充 大部分空格没有实际意义 var a = 1和var a=1没有区别 加回车大部分时候也不影响 只有return后面不能加回车 ## 2. 标识符 变量名就是是标识符。JS的标识符对大小写敏感，所以a和A是两个不同的标识符。 规则： 1. 第一个字符，可以是Unicode字母或$或_或中文 2. 后面的字符，处理上面的，还可以有数字 标识符错误示例： ![BSF.png](https://i.loli.net/2019/11/06/8qPcxb2Kf5sjpCY.png) ## 3. if else 语句 语法: 1. if(表达式){语句1}else{语句2} 2. {}可以在只有一句时省略 代码示例：   if (m === 3) { // 满足条件时，执行的语句 } else { // 不满足条件时，执行的语句 }
-**if else**(else代码块总是与离自己最近的那个if语句配对):  if (m === 0) { // &hellip; } else if (m === 1) { // &hellip; } else if (m === 2) { // &hellip; } else { // &hellip; }
+var a = 1  是一个语句
+ 二者的区别
+表达式一般都有值，语句可能有也可能没有
+语句一般会改变环境（声明、赋值）
+上面两句话并不是绝对的
+ 关于空格的补充
+大部分空格没有实际意义
+var a = 1和var a=1没有区别
+加回车大部分时候也不影响
+只有return后面不能加回车
+  2. 标识符 变量名就是是标识符。JS的标识符对大小写敏感，所以a和A是两个不同的标识符。
+规则：
+1. 第一个字符，可以是Unicode字母或$或_或中文
+2. 后面的字符，除了上面的，还可以有数字
+标识符错误示例：
+3. if else 语句 语法: 1. if(表达式){语句1}else{语句2} 2. {}可以在只有一句时省略
+代码示例：
+if (m === 3) { // 满足条件时，执行的语句 } else { // 不满足条件时，执行的语句 }  if else(else代码块总是与离自己最近的那个if语句配对):
     </div>
   </div>
 </div>
