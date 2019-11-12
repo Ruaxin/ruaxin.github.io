@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>RUAX的博客  | JS函数的执行时机</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.58.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="JS函数的执行时机" />
+<meta property="og:description" content="JS函数的执行时机 先来看以下的这段代码
+let i = 0 for(i = 0; i&lt;6; i&#43;&#43;){ setTimeout(()=&gt;{ console.log(i) },0) }//结果会打印出6个6  接下来解释一下为什么会打印出6个6：
+由于在执行setTimeout之前，先会完成for循环，并且因为i是在外面定义的，所以for循环里只有一个i。完成循环后，i的值为6，再之后执行6次setTimeout，最终打印出6个6。
+如果把代码改成这样，就能打印出0,1,2,3,4,5
+for(let i = 0; i&lt;6; i&#43;&#43;){ setTimeout(()=&gt;{ console.log(i) },0) }//结果会打印出0,1,2,3,4,5  因为每次循环都会多创建一个i，就生成了6个不同的值。
+let i = 0 let fn = (a) =&gt; { setTimeout(() =&gt; { console.log(a) }, 0) } for (i = 0; i &lt; 6; i&#43;&#43;) { fn(i) }  这样也能打印出0,1,2,3,4,5。个人认为可能和上一段代码一样，每次循环都会生成一个a，这样就生成了6个不同的a值。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" />
+<meta property="article:published_time" content="2019-11-12T21:50:29+08:00" />
+<meta property="article:modified_time" content="2019-11-12T21:50:29+08:00" />
+<meta itemprop="name" content="JS函数的执行时机">
+<meta itemprop="description" content="JS函数的执行时机 先来看以下的这段代码
+let i = 0 for(i = 0; i&lt;6; i&#43;&#43;){ setTimeout(()=&gt;{ console.log(i) },0) }//结果会打印出6个6  接下来解释一下为什么会打印出6个6：
+由于在执行setTimeout之前，先会完成for循环，并且因为i是在外面定义的，所以for循环里只有一个i。完成循环后，i的值为6，再之后执行6次setTimeout，最终打印出6个6。
+如果把代码改成这样，就能打印出0,1,2,3,4,5
+for(let i = 0; i&lt;6; i&#43;&#43;){ setTimeout(()=&gt;{ console.log(i) },0) }//结果会打印出0,1,2,3,4,5  因为每次循环都会多创建一个i，就生成了6个不同的值。
+let i = 0 let fn = (a) =&gt; { setTimeout(() =&gt; { console.log(a) }, 0) } for (i = 0; i &lt; 6; i&#43;&#43;) { fn(i) }  这样也能打印出0,1,2,3,4,5。个人认为可能和上一段代码一样，每次循环都会生成一个a，这样就生成了6个不同的a值。">
+
+
+<meta itemprop="datePublished" content="2019-11-12T21:50:29&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-12T21:50:29&#43;08:00" />
+<meta itemprop="wordCount" content="58">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="JS函数的执行时机"/>
+<meta name="twitter:description" content="JS函数的执行时机 先来看以下的这段代码
+let i = 0 for(i = 0; i&lt;6; i&#43;&#43;){ setTimeout(()=&gt;{ console.log(i) },0) }//结果会打印出6个6  接下来解释一下为什么会打印出6个6：
+由于在执行setTimeout之前，先会完成for循环，并且因为i是在外面定义的，所以for循环里只有一个i。完成循环后，i的值为6，再之后执行6次setTimeout，最终打印出6个6。
+如果把代码改成这样，就能打印出0,1,2,3,4,5
+for(let i = 0; i&lt;6; i&#43;&#43;){ setTimeout(()=&gt;{ console.log(i) },0) }//结果会打印出0,1,2,3,4,5  因为每次循环都会多创建一个i，就生成了6个不同的值。
+let i = 0 let fn = (a) =&gt; { setTimeout(() =&gt; { console.log(a) }, 0) } for (i = 0; i &lt; 6; i&#43;&#43;) { fn(i) }  这样也能打印出0,1,2,3,4,5。个人认为可能和上一段代码一样，每次循环都会生成一个a，这样就生成了6个不同的a值。"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://localhost:1313/" class="f3 fw2 hover-white no-underline white-90 dib">
+      RUAX的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">JS函数的执行时机</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-11-12T21:50:29&#43;08:00">November 12, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="js函数的执行时机">JS函数的执行时机</h1>
+
+<p>先来看以下的这段代码</p>
+
+<pre><code>let i = 0
+for(i = 0; i&lt;6; i++){
+  setTimeout(()=&gt;{
+    console.log(i)
+  },0)
+}//结果会打印出6个6
+</code></pre>
+
+<p>接下来解释一下为什么会打印出6个6：<br />
+由于在执行setTimeout之前，先会完成for循环，并且因为i是在外面定义的，所以for循环里只有一个i。完成循环后，i的值为6，再之后执行6次setTimeout，最终打印出6个6。</p>
+
+<hr />
+
+<p>如果把代码改成这样，就能打印出0,1,2,3,4,5</p>
+
+<pre><code>for(let i = 0; i&lt;6; i++){
+  setTimeout(()=&gt;{
+    console.log(i)
+  },0)
+}//结果会打印出0,1,2,3,4,5
+</code></pre>
+
+<p>因为每次循环都会多创建一个i，就生成了6个不同的值。</p>
+
+<hr />
+
+<pre><code>let i = 0
+let fn = (a) =&gt; {
+  setTimeout(() =&gt; {
+    console.log(a)
+  }, 0)
+}
+for (i = 0; i &lt; 6; i++) {
+  fn(i)
+}
+</code></pre>
+
+<p>这样也能打印出0,1,2,3,4,5。个人认为可能和上一段代码一样，每次循环都会生成一个a，这样就生成了6个不同的a值。</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy; 2019 RUAX的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

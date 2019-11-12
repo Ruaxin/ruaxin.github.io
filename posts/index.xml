@@ -6,10 +6,24 @@
     <description>Recent content in Posts on RUAX的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sun, 10 Nov 2019 12:05:40 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 12 Nov 2019 21:50:29 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>JS函数的执行时机</title>
+      <link>http://localhost:1313/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/</link>
+      <pubDate>Tue, 12 Nov 2019 21:50:29 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/</guid>
+      <description>JS函数的执行时机 先来看以下的这段代码
+let i = 0 for(i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) }//结果会打印出6个6  接下来解释一下为什么会打印出6个6：
+由于在执行setTimeout之前，先会完成for循环，并且因为i是在外面定义的，所以for循环里只有一个i。完成循环后，i的值为6，再之后执行6次setTimeout，最终打印出6个6。
+如果把代码改成这样，就能打印出0,1,2,3,4,5
+for(let i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) }//结果会打印出0,1,2,3,4,5  因为每次循环都会多创建一个i，就生成了6个不同的值。
+let i = 0 let fn = (a) =&amp;gt; { setTimeout(() =&amp;gt; { console.log(a) }, 0) } for (i = 0; i &amp;lt; 6; i++) { fn(i) }  这样也能打印出0,1,2,3,4,5。个人认为可能和上一段代码一样，每次循环都会生成一个a，这样就生成了6个不同的a值。</description>
+    </item>
     
     <item>
       <title>JS对象基本用法</title>
