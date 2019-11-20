@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>RUAX的博客  | 排序算法</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.58.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="排序算法" />
+<meta property="og:description" content="排序算法 选择排序 let selectSort = (arr) =&gt; { if (arr.length === 0) { console.log(&quot;输入的为空数组！&quot;) } else { for (let i = 0; i &lt; arr.length - 1; i&#43;&#43;) { let j = minIndex(arr.slice(i)) &#43; i if (j !== i) { swap(arr, i, j) } } } return arr } let minIndex = (arr) =&gt; { let index = 0 for (let i = 1; i &lt; arr.length; i&#43;&#43;) { if (arr[i] &lt; arr[index]) { index = i } } return index } let swap = (arr, i, j) =&gt; { let temp = arr[i] arr[i] = arr[j] arr[j] = temp }  快速排序 let quickSort = (arr) =&gt; { if (arr." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" />
+<meta property="article:published_time" content="2019-11-20T15:41:07+08:00" />
+<meta property="article:modified_time" content="2019-11-20T15:41:07+08:00" />
+<meta itemprop="name" content="排序算法">
+<meta itemprop="description" content="排序算法 选择排序 let selectSort = (arr) =&gt; { if (arr.length === 0) { console.log(&quot;输入的为空数组！&quot;) } else { for (let i = 0; i &lt; arr.length - 1; i&#43;&#43;) { let j = minIndex(arr.slice(i)) &#43; i if (j !== i) { swap(arr, i, j) } } } return arr } let minIndex = (arr) =&gt; { let index = 0 for (let i = 1; i &lt; arr.length; i&#43;&#43;) { if (arr[i] &lt; arr[index]) { index = i } } return index } let swap = (arr, i, j) =&gt; { let temp = arr[i] arr[i] = arr[j] arr[j] = temp }  快速排序 let quickSort = (arr) =&gt; { if (arr.">
+
+
+<meta itemprop="datePublished" content="2019-11-20T15:41:07&#43;08:00" />
+<meta itemprop="dateModified" content="2019-11-20T15:41:07&#43;08:00" />
+<meta itemprop="wordCount" content="558">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="排序算法"/>
+<meta name="twitter:description" content="排序算法 选择排序 let selectSort = (arr) =&gt; { if (arr.length === 0) { console.log(&quot;输入的为空数组！&quot;) } else { for (let i = 0; i &lt; arr.length - 1; i&#43;&#43;) { let j = minIndex(arr.slice(i)) &#43; i if (j !== i) { swap(arr, i, j) } } } return arr } let minIndex = (arr) =&gt; { let index = 0 for (let i = 1; i &lt; arr.length; i&#43;&#43;) { if (arr[i] &lt; arr[index]) { index = i } } return index } let swap = (arr, i, j) =&gt; { let temp = arr[i] arr[i] = arr[j] arr[j] = temp }  快速排序 let quickSort = (arr) =&gt; { if (arr."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://localhost:1313/" class="f3 fw2 hover-white no-underline white-90 dib">
+      RUAX的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">排序算法</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-11-20T15:41:07&#43;08:00">November 20, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="排序算法">排序算法</h1>
+
+<h2 id="选择排序">选择排序</h2>
+
+<pre><code>let selectSort = (arr) =&gt; {
+  if (arr.length === 0) {
+    console.log(&quot;输入的为空数组！&quot;)
+  } else {
+    for (let i = 0; i &lt; arr.length - 1; i++) {
+      let j = minIndex(arr.slice(i)) + i
+      if (j !== i) {
+        swap(arr, i, j)
+      }
+    }
+  }
+  return arr
+}
+let minIndex = (arr) =&gt; {
+  let index = 0
+  for (let i = 1; i &lt; arr.length; i++) {
+    if (arr[i] &lt; arr[index]) {
+      index = i
+    }
+  }
+  return index
+}
+let swap = (arr, i, j) =&gt; {
+  let temp = arr[i]
+  arr[i] = arr[j]
+  arr[j] = temp
+} 
+</code></pre>
+
+<h2 id="快速排序">快速排序</h2>
+
+<pre><code>let quickSort = (arr) =&gt; {
+  if (arr.length &lt;= 1) {
+    if (arr.length === 0) {
+      console.log(&quot;输入的为空数组！&quot;)
+    }
+    return arr
+  }
+  let pivotIndex = Math.floor(arr.length / 2)
+  let pivot = arr.splice(pivotIndex, 1)[0]
+  let left = []
+  let right = []
+  for (let i = 0; i &lt; arr.length; i++) {
+    if (arr[i] &lt; pivot) {
+      left.push(arr[i])
+    } else {
+      right.push(arr[i])
+    }
+  }
+  return quickSort(left).concat([pivot], quickSort(right))
+}
+</code></pre>
+
+<h2 id="归并排序">归并排序</h2>
+
+<pre><code>let mergeSort = (arr) =&gt; {
+  if (arr.length === 0) {
+    console.log(&quot;输入的为空数组！&quot;)
+    return arr
+  }
+  if (arr.length === 1) {
+    return arr
+  }
+  let left = arr.slice(0, Math.floor(arr.length / 2))
+  let right = arr.slice(Math.floor(arr.length / 2))
+  return merge(mergeSort(left), mergeSort(right))
+}
+let merge = (a, b) =&gt; {
+  if (a.length === 0) {
+    return b
+  }
+  if (b.length === 0) {
+    return a
+  }
+  if (a[0] &lt; b[0]) {
+    return [a[0]].concat(merge(a.slice(1), b))
+  } else {
+    return [b[0]].concat(merge(b.slice(1), a))
+  }
+}
+</code></pre>
+
+<h2 id="计数排序">计数排序</h2>
+
+<pre><code>let countSort = (arr) =&gt; {
+  if (arr.length === 0) {
+    console.log(&quot;输入的为空数组！&quot;)
+    return arr
+  }
+  let hashTable = {},
+    result = [],
+    max = 0
+  for (let i = 0; i &lt; arr.length; i++) {
+    if (!(arr[i] in hashTable)) {
+      hashTable[arr[i]] = 1
+    } else {
+      hashTable[arr[i]] += 1
+    }
+    if (arr[i] &gt; max) {
+      max = arr[i]
+    }
+  }
+  for (let j = 0; j &lt;= max; j++) {
+    if (j in hashTable) {
+      for (let k = 0; k &lt; hashTable[j]; k++) {
+        result.push(j)
+      }
+    }
+  }
+  return result
+}
+</code></pre>
+
+<h2 id="冒泡排序">冒泡排序</h2>
+
+<pre><code>let bubbleSort = (arr) =&gt; {
+  if (arr.length === 0) {
+    console.log(&quot;输入的为空数组！&quot;)
+    return arr
+  }
+  for (let j = 0; j &lt; arr.length - 1; j++) {
+    for (let i = 0; i &lt; arr.length - 1; i++)
+      if (arr[i] &gt; arr[i + 1]) {
+        let temp = arr[i]
+        arr[i] = arr[i + 1]
+        arr[i + 1] = temp
+      }
+  }
+  return arr
+}
+</code></pre>
+
+<h2 id="插入排序">插入排序</h2>
+
+<pre><code>let insertionSort = (arr) =&gt; {
+  if (arr.length === 0) {
+    console.log(&quot;输入的为空数组！&quot;)
+    return arr
+  }
+  for (let i = 1; i &lt; arr.length; i++) {
+    for (let j = 1; j &lt; i + 1; j++) {
+      if (arr[i] &lt; arr[i - j]) {
+        let temp = arr.splice(i, 1)[0]
+        arr.splice(i - j, 0, temp)
+      }
+    }
+  }
+  return arr
+}
+</code></pre>
+
+<h2 id="基数排序">基数排序</h2>
+
+<pre><code> let cardinalSort = (arr) =&gt; {
+   if (arr.length === 0) {
+     console.log(&quot;输入的为空数组！&quot;)
+     return arr
+   }
+   let max = Math.max.apply(null, arr)
+   let l = max.toString().length
+   //位数长度超过7位就会有bug，暂时还没找到原因
+   let result = []
+   for (let a = 0; a &lt;= l; a++) {
+     for (let i = 0; i &lt; 10; i++) {
+       for (let j = 0; j &lt; arr.length; j++) {
+         if (parseInt((arr[j] % (10 * * (a + 1))) / (10 * * a)) === i) {
+           result.push(arr[j])
+         }
+       }
+     }
+     arr = result
+     result = []
+   }
+   return arr
+ }
+</code></pre>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy; 2019 RUAX的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

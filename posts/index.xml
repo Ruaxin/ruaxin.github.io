@@ -6,10 +6,19 @@
     <description>Recent content in Posts on RUAX的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Tue, 12 Nov 2019 21:50:29 +0800</lastBuildDate>
+    <lastBuildDate>Wed, 20 Nov 2019 15:41:07 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>排序算法</title>
+      <link>http://localhost:1313/posts/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</link>
+      <pubDate>Wed, 20 Nov 2019 15:41:07 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
+      <description>排序算法 选择排序 let selectSort = (arr) =&amp;gt; { if (arr.length === 0) { console.log(&amp;quot;输入的为空数组！&amp;quot;) } else { for (let i = 0; i &amp;lt; arr.length - 1; i++) { let j = minIndex(arr.slice(i)) + i if (j !== i) { swap(arr, i, j) } } } return arr } let minIndex = (arr) =&amp;gt; { let index = 0 for (let i = 1; i &amp;lt; arr.length; i++) { if (arr[i] &amp;lt; arr[index]) { index = i } } return index } let swap = (arr, i, j) =&amp;gt; { let temp = arr[i] arr[i] = arr[j] arr[j] = temp }  快速排序 let quickSort = (arr) =&amp;gt; { if (arr.</description>
+    </item>
     
     <item>
       <title>JS函数的执行时机</title>
