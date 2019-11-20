@@ -37,7 +37,7 @@
 
 <meta itemprop="datePublished" content="2019-11-20T15:41:07&#43;08:00" />
 <meta itemprop="dateModified" content="2019-11-20T15:41:07&#43;08:00" />
-<meta itemprop="wordCount" content="558">
+<meta itemprop="wordCount" content="559">
 
 
 
@@ -240,12 +240,13 @@ let merge = (a, b) =&gt; {
     return arr
   }
   for (let j = 0; j &lt; arr.length - 1; j++) {
-    for (let i = 0; i &lt; arr.length - 1; i++)
+    for (let i = 0; i &lt; arr.length - 1; i++){
       if (arr[i] &gt; arr[i + 1]) {
         let temp = arr[i]
         arr[i] = arr[i + 1]
         arr[i + 1] = temp
       }
+    }
   }
   return arr
 }
