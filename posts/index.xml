@@ -6,10 +6,25 @@
     <description>Recent content in Posts on RUAX的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 20 Nov 2019 15:41:07 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 28 Nov 2019 17:26:34 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>jQuery功能总结</title>
+      <link>http://localhost:1313/posts/jquery%E5%8A%9F%E8%83%BD%E6%80%BB%E7%BB%93/</link>
+      <pubDate>Thu, 28 Nov 2019 17:26:34 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/jquery%E5%8A%9F%E8%83%BD%E6%80%BB%E7%BB%93/</guid>
+      <description>jQuery功能总结 1.jQuery 如何获取元素 jQuery()描述: 接受一个包含一个CSS选择器的字符串，用于匹配的一组元素。
+关于如何获取元素，jQuery是这样做的，我们将一个选择表达式，放进构造函数jQuery()（简写为$），然后就能得到被选中的元素。
+　$(document) //选择整个文档对象 $(&#39;#myId&#39;) //选择ID为myId的网页元素 $(&#39;div.myClass&#39;) // 选择class为myClass的div元素 $(&#39;input[name=first]&#39;) // 选择name属性等于first的input元素  2.jQuery 的链式操作是怎样的 关于链式操作，我们先来看代码：
+　$(&#39;#test&#39;).find(&#39;.red&#39;).addClass(&amp;quot;blue&amp;quot;)  如代码所见，链式操作就是选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来。
+之所以能这么操作，是因为return this之后，返回了当前调用的这个方法的实例对象this，那就可以继续访问自己的原型了。例：
+ addClass(className) { for (let i = 0; i &amp;lt; this.elements.length; i++) { const element = this.elements[i] element.classList.add(className) } return this }  3.jQuery 如何创建元素 还是先看源码：
+ let elements if (typeof selectorOrArrayOrTemplate === &amp;quot;string&amp;quot;) { if (selectorOrArrayOrTemplate[0] === &amp;quot;&amp;lt;&amp;quot;) { // 创建 div elements = [createElement(selectorOrArrayOrTemplate)] } else { // 查找 div elements = document.</description>
+    </item>
     
     <item>
       <title>排序算法</title>

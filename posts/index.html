@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:1313/posts/" />
 
-<meta property="og:updated_time" content="2019-11-20T15:41:07+08:00" />
+<meta property="og:updated_time" content="2019-11-28T17:26:34+08:00" />
 <meta itemprop="name" content="Posts">
 <meta itemprop="description" content="">
 
@@ -99,6 +99,27 @@
   <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
     <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/jquery%E5%8A%9F%E8%83%BD%E6%80%BB%E7%BB%93/" class="link black dim">
+        jQuery功能总结
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      jQuery功能总结 1.jQuery 如何获取元素 jQuery()描述: 接受一个包含一个CSS选择器的字符串，用于匹配的一组元素。
+关于如何获取元素，jQuery是这样做的，我们将一个选择表达式，放进构造函数jQuery()（简写为$），然后就能得到被选中的元素。
+　$(document) //选择整个文档对象 $('#myId') //选择ID为myId的网页元素 $('div.myClass') // 选择class为myClass的div元素 $('input[name=first]') // 选择name属性等于first的input元素  2.jQuery 的链式操作是怎样的 关于链式操作，我们先来看代码：
+　$('#test').find('.red').addClass(&quot;blue&quot;)  如代码所见，链式操作就是选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来。
+之所以能这么操作，是因为return this之后，返回了当前调用的这个方法的实例对象this，那就可以继续访问自己的原型了。例：
+ addClass(className) { for (let i = 0; i &lt; this.elements.length; i++) { const element = this.elements[i] element.classList.add(className) } return this }  3.jQuery 如何创建元素 还是先看源码：
+ let elements if (typeof selectorOrArrayOrTemplate === &quot;string&quot;) { if (selectorOrArrayOrTemplate[0] === &quot;&lt;&quot;) { // 创建 div elements = [createElement(selectorOrArrayOrTemplate)] } else { // 查找 div elements = document.
+    </div>
+  </div>
+</div>
+</div>
       
         <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
   <div class="bg-white mb3 pa4 gray overflow-hidden">
@@ -311,33 +332,51 @@ _self（当前页面）
 </div>
 </div>
       
-        <div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-  <div class="bg-white mb3 pa4 gray overflow-hidden">
-    <span class="f6 db">Posts</span>
-    <h1 class="f3 near-black">
-      <a href="/posts/%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/" class="link black dim">
-        如何用hugo搭建个人博客
-      </a>
-    </h1>
-    <div class="nested-links f5 lh-copy nested-copy-line-height">
-      安装hugo  下载hugo并解压到D:\Software\hugo
- 把D:\Software\hugo\加到PATH
-  快速搭建博客  进入hugo官网，点击Quick Start开始
- 用cmder执行Step 2，新建一个博客生成器，例：
-hugo new site xxx.github.io-creator  用VSCode打开xxx.github.io-creator，执行Step 3来设置主题，例：
-git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke echo 'theme = &quot;ananke&quot;' &gt;&gt; config.toml  用Step 4的代码来创建第一篇博客，例：
-hugo new posts/第一篇博客.md  编辑完内容，把draft：true改false
- 执行Step 5的代码
-hugo server -D  得到一个本地预览的地址http://localhost:1313/
- 关于主题的配置，可打开config.toml进行汉化，改标题等，例：
-baseURL = &quot;https://example.org/&quot; languageCode = &quot;zh-Hans&quot; title = &quot;XXX的博客&quot; theme = &quot;ananke&quot;  运行hugo，得到public目录,进入public目录，执行
-git init git add .
-    </div>
-  </div>
-</div>
-</div>
-      
     </section>
+
+<ul class="pagination">
+    
+    <li class="page-item">
+        <a href="/posts/" class="page-link" aria-label="First"><span aria-hidden="true">&laquo;&laquo;</span></a>
+    </li>
+    
+    <li class="page-item disabled">
+    <a  class="page-link" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a>
+    </li>
+    
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item active"><a class="page-link" href="/posts/">1</a></li>
+    
+    
+    
+    
+    
+    
+        
+        
+    
+    
+    <li class="page-item"><a class="page-link" href="/posts/page/2/">2</a></li>
+    
+    
+    <li class="page-item">
+    <a href="/posts/page/2/" class="page-link" aria-label="Next"><span aria-hidden="true">&raquo;</span></a>
+    </li>
+    
+    <li class="page-item">
+        <a href="/posts/page/2/" class="page-link" aria-label="Last"><span aria-hidden="true">&raquo;&raquo;</span></a>
+    </li>
+    
+</ul>
 
 </article>
 

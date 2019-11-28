@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:1313/" />
 
-<meta property="og:updated_time" content="2019-11-20T15:41:07+08:00" />
+<meta property="og:updated_time" content="2019-11-28T17:26:34+08:00" />
 <meta itemprop="name" content="RUAX的博客">
 <meta itemprop="description" content="">
 
@@ -130,6 +130,36 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/jquery%E5%8A%9F%E8%83%BD%E6%80%BB%E7%BB%93/" class="color-inherit dim link">
+            jQuery功能总结
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          jQuery功能总结 1.jQuery 如何获取元素 jQuery()描述: 接受一个包含一个CSS选择器的字符串，用于匹配的一组元素。
+关于如何获取元素，jQuery是这样做的，我们将一个选择表达式，放进构造函数jQuery()（简写为$），然后就能得到被选中的元素。
+　$(document) //选择整个文档对象 $('#myId') //选择ID为myId的网页元素 $('div.myClass') // 选择class为myClass的div元素 $('input[name=first]') // 选择name属性等于first的input元素  2.jQuery 的链式操作是怎样的 关于链式操作，我们先来看代码：
+　$('#test').find('.red').addClass(&quot;blue&quot;)  如代码所见，链式操作就是选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来。
+之所以能这么操作，是因为return this之后，返回了当前调用的这个方法的实例对象this，那就可以继续访问自己的原型了。例：
+ addClass(className) { for (let i = 0; i &lt; this.elements.length; i++) { const element = this.elements[i] element.classList.add(className) } return this }  3.jQuery 如何创建元素 还是先看源码：
+ let elements if (typeof selectorOrArrayOrTemplate === &quot;string&quot;) { if (selectorOrArrayOrTemplate[0] === &quot;&lt;&quot;) { // 创建 div elements = [createElement(selectorOrArrayOrTemplate)] } else { // 查找 div elements = document.
+        </div>
+          <a href="/posts/jquery%E5%8A%9F%E8%83%BD%E6%80%BB%E7%BB%93/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="color-inherit dim link">
             排序算法
             </a>
@@ -175,48 +205,18 @@ let i = 0 let fn = (a) =&gt; { setTimeout(() =&gt; { console.log(a) }, 0) } for 
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="color-inherit dim link">
-            JS对象基本用法
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          JS对象基本用法 1 声明对象的两种语法 写法1：
-let obj = {'name': 'frank', 'age': 18}  写法2：
-let obj = new Objext({'name': 'frank'})  细节：
-- 键名是字符串，不是标识符，可以包括任意字符 - 引号可省略，省略之后就只能写标识符 - 就算引号省略了，键名也还是字符串
-2 如何删除对象的属性 写法1：
-delete obj.xxx  写法2：
-delete obj['xxx']  3 如何查看对象的属性 1.查看自身所有属性 Object.keys(obj)  2.查看自身所有属性的值 Object.values(obj)  3.查看自身所有属性和值 Object.entries(obj)  4.查看自身+共有属性 写法1：
-console.dir(obj)  写法2：
-obj.__proto__  5.两种方法查看单个属性 中括号语法：
-obj['key']  点语法：
-obj.key  重点
-- obj.name 等价于 obj[&lsquo;name&rsquo;]
-- obj.name 不等价于 obj[name]
-        </div>
-          <a href="/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="link black dim">
+              JS对象基本用法
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="link black dim">
@@ -233,12 +233,6 @@ obj.key  重点
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/%E6%B5%85%E6%9E%90url/" class="link black dim">
               浅析URL
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/css%E7%9F%A5%E8%AF%86%E6%80%BB%E7%BB%93/" class="link black dim">
-              CSS知识总结
             </a>
           </h2>
         
