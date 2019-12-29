@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>RUAX的博客  | 浅析MVC</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.58.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="浅析MVC" />
+<meta property="og:description" content="什么是MVC 模型model用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型。一旦模型的数据发生变化，模型将通知有关的视图。
+视图view是它在屏幕上的表示，描绘的是model的当前状态。当模型的数据发生变化，视图相应地得到刷新自己的机会。
+控制器controller定义用户界面对用户输入的响应方式，起到不同层面间的组织作用，用于控制应用程序的流程，它处理用户的行为和数据model上的改变。
+M:数据相关都放到m
+const m = { data: {},//数据 create(){},//增 delete(){},//删 update(){},//改 get(){}//查 }  V:视图相关都放到v
+const v = { el: ,//元素 html: ``,//页面 init(){},//初始化 render(){}//更新 }  C:控制器相关的都放在c
+const c = { events:{},//事件 add(){},//方法 }  EventBus eventBus 提供了 on、off 和 trigger 等 API，on 用于监听事件，trigger 用域触发事件。主要用于对象间通信,使用 eventBus 可以满足最小知识原则，m 和 v 互相不知道对方的细节，但是却可以调用对方的功能.
+const c = { eventBus.on(&#39;m:updated&#39;, () =&gt; { v.render(m.data.n) })//在控制器中监听v的更新事件 }  表驱动编程 表驱动法是一种编程模式(scheme)——从表里面查找信息而不使用逻辑语句(if和case)。事实上，凡是能通过逻辑语句来选择的事物，都可以通过查表来选择。对简单的情况而言，使用逻辑语句更为容易和直白。但随着逻辑链的越来越发杂，查表法也就愈发显得更具吸引力。 比如：" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/%E6%B5%85%E6%9E%90mvc/" />
+<meta property="article:published_time" content="2019-12-29T14:28:33+08:00" />
+<meta property="article:modified_time" content="2019-12-29T14:28:33+08:00" />
+<meta itemprop="name" content="浅析MVC">
+<meta itemprop="description" content="什么是MVC 模型model用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型。一旦模型的数据发生变化，模型将通知有关的视图。
+视图view是它在屏幕上的表示，描绘的是model的当前状态。当模型的数据发生变化，视图相应地得到刷新自己的机会。
+控制器controller定义用户界面对用户输入的响应方式，起到不同层面间的组织作用，用于控制应用程序的流程，它处理用户的行为和数据model上的改变。
+M:数据相关都放到m
+const m = { data: {},//数据 create(){},//增 delete(){},//删 update(){},//改 get(){}//查 }  V:视图相关都放到v
+const v = { el: ,//元素 html: ``,//页面 init(){},//初始化 render(){}//更新 }  C:控制器相关的都放在c
+const c = { events:{},//事件 add(){},//方法 }  EventBus eventBus 提供了 on、off 和 trigger 等 API，on 用于监听事件，trigger 用域触发事件。主要用于对象间通信,使用 eventBus 可以满足最小知识原则，m 和 v 互相不知道对方的细节，但是却可以调用对方的功能.
+const c = { eventBus.on(&#39;m:updated&#39;, () =&gt; { v.render(m.data.n) })//在控制器中监听v的更新事件 }  表驱动编程 表驱动法是一种编程模式(scheme)——从表里面查找信息而不使用逻辑语句(if和case)。事实上，凡是能通过逻辑语句来选择的事物，都可以通过查表来选择。对简单的情况而言，使用逻辑语句更为容易和直白。但随着逻辑链的越来越发杂，查表法也就愈发显得更具吸引力。 比如：">
+
+
+<meta itemprop="datePublished" content="2019-12-29T14:28:33&#43;08:00" />
+<meta itemprop="dateModified" content="2019-12-29T14:28:33&#43;08:00" />
+<meta itemprop="wordCount" content="106">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="浅析MVC"/>
+<meta name="twitter:description" content="什么是MVC 模型model用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型。一旦模型的数据发生变化，模型将通知有关的视图。
+视图view是它在屏幕上的表示，描绘的是model的当前状态。当模型的数据发生变化，视图相应地得到刷新自己的机会。
+控制器controller定义用户界面对用户输入的响应方式，起到不同层面间的组织作用，用于控制应用程序的流程，它处理用户的行为和数据model上的改变。
+M:数据相关都放到m
+const m = { data: {},//数据 create(){},//增 delete(){},//删 update(){},//改 get(){}//查 }  V:视图相关都放到v
+const v = { el: ,//元素 html: ``,//页面 init(){},//初始化 render(){}//更新 }  C:控制器相关的都放在c
+const c = { events:{},//事件 add(){},//方法 }  EventBus eventBus 提供了 on、off 和 trigger 等 API，on 用于监听事件，trigger 用域触发事件。主要用于对象间通信,使用 eventBus 可以满足最小知识原则，m 和 v 互相不知道对方的细节，但是却可以调用对方的功能.
+const c = { eventBus.on(&#39;m:updated&#39;, () =&gt; { v.render(m.data.n) })//在控制器中监听v的更新事件 }  表驱动编程 表驱动法是一种编程模式(scheme)——从表里面查找信息而不使用逻辑语句(if和case)。事实上，凡是能通过逻辑语句来选择的事物，都可以通过查表来选择。对简单的情况而言，使用逻辑语句更为容易和直白。但随着逻辑链的越来越发杂，查表法也就愈发显得更具吸引力。 比如："/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://localhost:1313/" class="f3 fw2 hover-white no-underline white-90 dib">
+      RUAX的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+        <ul class="pl0 mr3">
+          
+          <li class="list f5 f4-ns fw4 dib pr3">
+            <a class="hover-white no-underline white-90" href="/about/" title="About page">
+              About
+            </a>
+          </li>
+          
+        </ul>
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">浅析MVC</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2019-12-29T14:28:33&#43;08:00">December 29, 2019</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="什么是mvc">什么是MVC</h1>
+
+<p>模型model用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型。一旦模型的数据发生变化，模型将通知有关的视图。</p>
+
+<p>视图view是它在屏幕上的表示，描绘的是model的当前状态。当模型的数据发生变化，视图相应地得到刷新自己的机会。</p>
+
+<p>控制器controller定义用户界面对用户输入的响应方式，起到不同层面间的组织作用，用于控制应用程序的流程，它处理用户的行为和数据model上的改变。</p>
+
+<p>M:数据相关都放到m</p>
+
+<pre><code>const m = {
+  data: {},//数据
+  create(){},//增
+  delete(){},//删
+  update(){},//改
+  get(){}//查
+}
+</code></pre>
+
+<p>V:视图相关都放到v</p>
+
+<pre><code>const v = {
+  el: ,//元素
+  html: ``,//页面
+  init(){},//初始化
+  render(){}//更新
+}
+</code></pre>
+
+<p>C:控制器相关的都放在c</p>
+
+<pre><code>const c = {
+  events:{},//事件
+  add(){},//方法
+}
+</code></pre>
+
+<h1 id="eventbus">EventBus</h1>
+
+<p>eventBus 提供了 on、off 和 trigger 等 API，on 用于监听事件，trigger 用域触发事件。主要用于对象间通信,使用 eventBus 可以满足最小知识原则，m 和 v 互相不知道对方的细节，但是却可以调用对方的功能.</p>
+
+<pre><code>const c = {
+    eventBus.on('m:updated', () =&gt; {
+        v.render(m.data.n)
+        })//在控制器中监听v的更新事件
+}
+</code></pre>
+
+<h1 id="表驱动编程">表驱动编程</h1>
+
+<p>表驱动法是一种编程模式(scheme)——从表里面查找信息而不使用逻辑语句(if和case)。事实上，凡是能通过逻辑语句来选择的事物，都可以通过查表来选择。对简单的情况而言，使用逻辑语句更为容易和直白。但随着逻辑链的越来越发杂，查表法也就愈发显得更具吸引力。
+比如：</p>
+
+<pre><code>$button1.on(&quot;click&quot;, () =&gt; {
+  let n;
+  n += 1;
+});
+$button2.on(&quot;click&quot;, () =&gt; {
+  let n;
+  n -= 1;
+});
+</code></pre>
+
+<p>改成：</p>
+
+<pre><code>events:{
+    'click #add1': 'add',
+    'click #minus1': 'minus'
+  },
+  add(){
+    n + 1
+  },
+  minus(){
+    n - 1
+  }
+</code></pre>
+
+<h1 id="浅谈框架">浅谈框架</h1>
+
+<p>MVC作为一种架构设计模式，它通过关注点分离鼓励改进应用程序组织。在它出现之后也一直在演变，有MVC，MVP，MVVM等等，每个框架都有自己的特性，这些都是在经典MVC基础上随着时代的发展、应用环境的变化衍变出来的。框架虽然是一个很有争议性的话题，但我们更应该去关注框架是否运行良好、灵活，不必拘泥于某种模式。花时间去构建一个健壮、具有良好设计、遵从关注点分离的项目比花时间去争论更有意义。</p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy; 2019 RUAX的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

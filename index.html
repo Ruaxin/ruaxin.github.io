@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:1313/" />
 
-<meta property="og:updated_time" content="2019-11-28T17:26:34+08:00" />
+<meta property="og:updated_time" content="2019-12-29T14:28:33+08:00" />
 <meta itemprop="name" content="RUAX的博客">
 <meta itemprop="description" content="">
 
@@ -130,6 +130,37 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/%E6%B5%85%E6%9E%90mvc/" class="color-inherit dim link">
+            浅析MVC
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          什么是MVC 模型model用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型。一旦模型的数据发生变化，模型将通知有关的视图。
+视图view是它在屏幕上的表示，描绘的是model的当前状态。当模型的数据发生变化，视图相应地得到刷新自己的机会。
+控制器controller定义用户界面对用户输入的响应方式，起到不同层面间的组织作用，用于控制应用程序的流程，它处理用户的行为和数据model上的改变。
+M:数据相关都放到m
+const m = { data: {},//数据 create(){},//增 delete(){},//删 update(){},//改 get(){}//查 }  V:视图相关都放到v
+const v = { el: ,//元素 html: ``,//页面 init(){},//初始化 render(){}//更新 }  C:控制器相关的都放在c
+const c = { events:{},//事件 add(){},//方法 }  EventBus eventBus 提供了 on、off 和 trigger 等 API，on 用于监听事件，trigger 用域触发事件。主要用于对象间通信,使用 eventBus 可以满足最小知识原则，m 和 v 互相不知道对方的细节，但是却可以调用对方的功能.
+const c = { eventBus.on('m:updated', () =&gt; { v.render(m.data.n) })//在控制器中监听v的更新事件 }  表驱动编程 表驱动法是一种编程模式(scheme)——从表里面查找信息而不使用逻辑语句(if和case)。事实上，凡是能通过逻辑语句来选择的事物，都可以通过查表来选择。对简单的情况而言，使用逻辑语句更为容易和直白。但随着逻辑链的越来越发杂，查表法也就愈发显得更具吸引力。 比如：
+        </div>
+          <a href="/posts/%E6%B5%85%E6%9E%90mvc/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/jquery%E5%8A%9F%E8%83%BD%E6%80%BB%E7%BB%93/" class="color-inherit dim link">
             jQuery功能总结
             </a>
@@ -176,41 +207,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="color-inherit dim link">
-            JS函数的执行时机
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          JS函数的执行时机 先来看以下的这段代码
-let i = 0 for(i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) }//结果会打印出6个6  接下来解释一下为什么会打印出6个6：
-由于在执行setTimeout之前，先会完成for循环，并且因为i是在外面定义的，所以for循环里只有一个i。完成循环后，i的值为6，再之后执行6次setTimeout，最终打印出6个6。
-如果把代码改成这样，就能打印出0,1,2,3,4,5
-for(let i = 0; i&lt;6; i++){ setTimeout(()=&gt;{ console.log(i) },0) }//结果会打印出0,1,2,3,4,5  因为每次循环都会多创建一个i，就生成了6个不同的值。
-let i = 0 let fn = (a) =&gt; { setTimeout(() =&gt; { console.log(a) }, 0) } for (i = 0; i &lt; 6; i++) { fn(i) }  这样也能打印出0,1,2,3,4,5。个人认为可能和上一段代码一样，每次循环都会生成一个a，这样就生成了6个不同的a值。
-        </div>
-          <a href="/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="link black dim">
+              JS函数的执行时机
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="link black dim">
@@ -227,12 +235,6 @@ let i = 0 let fn = (a) =&gt; { setTimeout(() =&gt; { console.log(a) }, 0) } for 
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" class="link black dim">
               JavaScript的诞生
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/%E6%B5%85%E6%9E%90url/" class="link black dim">
-              浅析URL
             </a>
           </h2>
         
