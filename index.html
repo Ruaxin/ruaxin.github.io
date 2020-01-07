@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:1313/" />
 
-<meta property="og:updated_time" content="2019-12-29T14:28:33+08:00" />
+<meta property="og:updated_time" content="2020-01-07T17:32:37+08:00" />
 <meta itemprop="name" content="RUAX的博客">
 <meta itemprop="description" content="">
 
@@ -130,6 +130,30 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/%E6%B5%85%E6%9E%90vue/" class="color-inherit dim link">
+            浅析Vue
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          Vue的两个版本  完整版vue.js 完整版：同时包含编译器和运行时的版本。 编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。 只包含运行时版vue.runtime.js 运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。      Vue完整版 Vue非完整版     特点 有compiler 没有compiler   视图 写造HTML里或者写在template选项 写在render函数里用h来创建标签   cdn引入 vue.js vue.runtime.js   webpack引入 需要配置alias 默认使用此版   @vue/cli引入 需要额外配置 默认使用此版    template 和 render  template：一个字符串模板作为 Vue 实例的标识使用。模板将会 替换 挂载的元素。挂载元素的内容都将被忽略，除非模板的内容有分发插槽。如果值以 # 开始，则它将被用作选择符，并使用匹配元素的 innerHTML 作为模板。 render：字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。如果组件是一个函数组件，渲染函数还会接收一个额外的 context 参数，为没有实例的函数组件提供上下文信息。Vue 选项中的 render 函数若存在，则 Vue 构造函数不会从 template 选项或通过 el 选项指定的挂载元素中提取出的 HTML 模板编译渲染函数。
+        </div>
+          <a href="/posts/%E6%B5%85%E6%9E%90vue/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/%E6%B5%85%E6%9E%90mvc/" class="color-inherit dim link">
             浅析MVC
             </a>
@@ -183,36 +207,18 @@ const c = { eventBus.on('m:updated', () =&gt; { v.render(m.data.n) })//在控制
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="color-inherit dim link">
-            排序算法
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          排序算法 选择排序 let selectSort = (arr) =&gt; { if (arr.length === 0) { console.log(&quot;输入的为空数组！&quot;) } else { for (let i = 0; i &lt; arr.length - 1; i++) { let j = minIndex(arr.slice(i)) + i if (j !== i) { swap(arr, i, j) } } } return arr } let minIndex = (arr) =&gt; { let index = 0 for (let i = 1; i &lt; arr.length; i++) { if (arr[i] &lt; arr[index]) { index = i } } return index } let swap = (arr, i, j) =&gt; { let temp = arr[i] arr[i] = arr[j] arr[j] = temp }  快速排序 let quickSort = (arr) =&gt; { if (arr.
-        </div>
-          <a href="/posts/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="link black dim">
+              排序算法
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="link black dim">
@@ -232,12 +238,6 @@ const c = { eventBus.on('m:updated', () =&gt; { v.render(m.data.n) })//在控制
             </a>
           </h2>
         
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/javascript%E7%9A%84%E8%AF%9E%E7%94%9F/" class="link black dim">
-              JavaScript的诞生
-            </a>
-          </h2>
-        
 
         
         
@@ -253,7 +253,7 @@ const c = { eventBus.on('m:updated', () =&gt; { v.render(m.data.n) })//在控制
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
   <div class="flex justify-between">
   <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
-    &copy; 2019 RUAX的博客
+    &copy; 2020 RUAX的博客
   </a>
     <div>
 
