@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>RUAX的博客  | computed和watch</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.58.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="computed和watch" />
+<meta property="og:description" content="computed 计算属性：
+ 从其他属性计算而来的属性变成一个属性,调用时不需要加括号。 会根据依赖数据发生的改变，进行计算，显示新的结果，这个结果支持缓存，所以只有当依赖的数据改变时，才会重新计算.
+ 不支持异步，当computed内有异步操作时无效，无法监听数据的变化.
+ 计算属性将被混入到 Vue 实例中。所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例。
+  var vm = new Vue({ data: { a: 1 }, computed: { // 仅读取  aDouble: function () { return this.a * 2 }, // 读取和设置  aPlus: { get: function () { return this.a &#43; 1 }, set: function (v) { this.a = v - 1 } } } }) vm." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/computed%E5%92%8Cwatch/" />
+<meta property="article:published_time" content="2020-01-11T12:53:50+08:00" />
+<meta property="article:modified_time" content="2020-01-11T12:53:50+08:00" />
+<meta itemprop="name" content="computed和watch">
+<meta itemprop="description" content="computed 计算属性：
+ 从其他属性计算而来的属性变成一个属性,调用时不需要加括号。 会根据依赖数据发生的改变，进行计算，显示新的结果，这个结果支持缓存，所以只有当依赖的数据改变时，才会重新计算.
+ 不支持异步，当computed内有异步操作时无效，无法监听数据的变化.
+ 计算属性将被混入到 Vue 实例中。所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例。
+  var vm = new Vue({ data: { a: 1 }, computed: { // 仅读取  aDouble: function () { return this.a * 2 }, // 读取和设置  aPlus: { get: function () { return this.a &#43; 1 }, set: function (v) { this.a = v - 1 } } } }) vm.">
+
+
+<meta itemprop="datePublished" content="2020-01-11T12:53:50&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-11T12:53:50&#43;08:00" />
+<meta itemprop="wordCount" content="215">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="computed和watch"/>
+<meta name="twitter:description" content="computed 计算属性：
+ 从其他属性计算而来的属性变成一个属性,调用时不需要加括号。 会根据依赖数据发生的改变，进行计算，显示新的结果，这个结果支持缓存，所以只有当依赖的数据改变时，才会重新计算.
+ 不支持异步，当computed内有异步操作时无效，无法监听数据的变化.
+ 计算属性将被混入到 Vue 实例中。所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例。
+  var vm = new Vue({ data: { a: 1 }, computed: { // 仅读取  aDouble: function () { return this.a * 2 }, // 读取和设置  aPlus: { get: function () { return this.a &#43; 1 }, set: function (v) { this.a = v - 1 } } } }) vm."/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://localhost:1313/" class="f3 fw2 hover-white no-underline white-90 dib">
+      RUAX的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">computed和watch</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-01-11T12:53:50&#43;08:00">January 11, 2020</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="computed">computed</h1>
+
+<p>计算属性：</p>
+
+<ul>
+<li>从其他属性计算而来的属性变成一个属性,调用时不需要加括号。</li>
+<li>会根据依赖数据发生的改变，进行计算，显示新的结果，这个结果支持缓存，所以只有当依赖的数据改变时，才会重新计算.<br /></li>
+<li>不支持异步，当computed内有异步操作时无效，无法监听数据的变化.<br /></li>
+<li>计算属性将被混入到 Vue 实例中。所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例。<br /></li>
+</ul>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span> },
+  <span style="color:#a6e22e">computed</span><span style="color:#f92672">:</span> {
+    <span style="color:#75715e">// 仅读取
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">aDouble</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+      <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span>
+    },
+    <span style="color:#75715e">// 读取和设置
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">aPlus</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">get</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> () {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span>
+      },
+      <span style="color:#a6e22e">set</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">v</span>) {
+        <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">v</span> <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span>
+      }
+    }
+  }
+})
+<span style="color:#a6e22e">vm</span>.<span style="color:#a6e22e">aPlus</span>   <span style="color:#75715e">// =&gt; 2(不需要加括号)
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">vm</span>.<span style="color:#a6e22e">aPlus</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+<span style="color:#a6e22e">vm</span>.<span style="color:#a6e22e">a</span>       <span style="color:#75715e">// =&gt; 2
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">vm</span>.<span style="color:#a6e22e">aDouble</span> <span style="color:#75715e">// =&gt; 4
+</span></code></pre></div>
+
+<h1 id="watch">watch</h1>
+
+<p>监听：</p>
+
+<ul>
+<li>一个对象，键是需要观察的表达式，值是对应回调函数。值也可以是方法名，或者包含选项的对象。Vue 实例将会在实例化时调用 $watch()，遍历 watch 对象的每一个属性。</li>
+<li>当一个属性发生变化时，就会执行对应的操作。</li>
+<li>监听的函数接收两个参数，第一个参数是最新的值；第二个参数是输入之前的值。</li>
+<li>deep：是否监听里面的属性</li>
+<li>immediate：是否在第一次渲染时要执行</li>
+<li>不支持缓存,但支持异步</li>
+</ul>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">vm</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+  <span style="color:#a6e22e">data</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">1</span>,
+    <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">2</span>,
+    <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">3</span>,
+    <span style="color:#a6e22e">d</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">4</span>,
+    <span style="color:#a6e22e">e</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">f</span><span style="color:#f92672">:</span> {
+        <span style="color:#a6e22e">g</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">5</span>
+      }
+    }
+  },
+  <span style="color:#a6e22e">watch</span><span style="color:#f92672">:</span> {
+    <span style="color:#a6e22e">a</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">oldVal</span>) {
+      <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;new: %s, old: %s&#39;</span>, <span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">oldVal</span>)
+    },
+    <span style="color:#75715e">// 方法名
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">b</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;someMethod&#39;</span>,
+    <span style="color:#75715e">// 该回调会在任何被侦听的对象的 property 改变时被调用，不论其被嵌套多深
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">c</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">oldVal</span>) { <span style="color:#75715e">/* ... */</span> },
+      <span style="color:#a6e22e">deep</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+    },
+    <span style="color:#75715e">// 该回调将会在侦听开始之后被立即调用
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">d</span><span style="color:#f92672">:</span> {
+      <span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;someMethod&#39;</span>,
+      <span style="color:#a6e22e">immediate</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">true</span>
+    },
+    <span style="color:#a6e22e">e</span><span style="color:#f92672">:</span> [
+      <span style="color:#e6db74">&#39;handle1&#39;</span>,
+      <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handle2</span> (<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">oldVal</span>) { <span style="color:#75715e">/* ... */</span> },
+      {
+        <span style="color:#a6e22e">handler</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> <span style="color:#a6e22e">handle3</span> (<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">oldVal</span>) { <span style="color:#75715e">/* ... */</span> },
+        <span style="color:#75715e">/* ... */</span>
+      }
+    ],
+    <span style="color:#75715e">// watch vm.e.f&#39;s value: {g: 5}
+</span><span style="color:#75715e"></span>    <span style="color:#e6db74">&#39;e.f&#39;</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">val</span>, <span style="color:#a6e22e">oldVal</span>) { <span style="color:#75715e">/* ... */</span> }
+  }
+})
+<span style="color:#a6e22e">vm</span>.<span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span> <span style="color:#75715e">// =&gt; new: 2, old: 1
+</span></code></pre></div>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy; 2020 RUAX的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

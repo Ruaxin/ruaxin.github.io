@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:1313/" />
 
-<meta property="og:updated_time" content="2020-01-07T17:32:37+08:00" />
+<meta property="og:updated_time" content="2020-01-11T12:53:50+08:00" />
 <meta itemprop="name" content="RUAX的博客">
 <meta itemprop="description" content="">
 
@@ -120,6 +120,34 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/computed%E5%92%8Cwatch/" class="color-inherit dim link">
+            computed和watch
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          computed 计算属性：
+ 从其他属性计算而来的属性变成一个属性,调用时不需要加括号。 会根据依赖数据发生的改变，进行计算，显示新的结果，这个结果支持缓存，所以只有当依赖的数据改变时，才会重新计算.
+ 不支持异步，当computed内有异步操作时无效，无法监听数据的变化.
+ 计算属性将被混入到 Vue 实例中。所有 getter 和 setter 的 this 上下文自动地绑定为 Vue 实例。
+  var vm = new Vue({ data: { a: 1 }, computed: { // 仅读取  aDouble: function () { return this.a * 2 }, // 读取和设置  aPlus: { get: function () { return this.a + 1 }, set: function (v) { this.a = v - 1 } } } }) vm.
+        </div>
+          <a href="/posts/computed%E5%92%8Cwatch/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/%E6%B5%85%E6%9E%90vue/" class="color-inherit dim link">
             浅析Vue
             </a>
@@ -164,41 +192,18 @@ EventBus eventBus 提供了 on、off 和 trigger 等 API，on 用于监听事件
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/jquery%E5%8A%9F%E8%83%BD%E6%80%BB%E7%BB%93/" class="color-inherit dim link">
-            jQuery功能总结
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          jQuery功能总结 1.jQuery 如何获取元素 jQuery()描述: 接受一个包含一个CSS选择器的字符串，用于匹配的一组元素。
-关于如何获取元素，jQuery是这样做的，我们将一个选择表达式，放进构造函数jQuery()（简写为$），然后就能得到被选中的元素。 $(document) //选择整个文档对象  $(&#39;#myId&#39;) //选择ID为myId的网页元素  $(&#39;div.myClass&#39;) // 选择class为myClass的div元素  $(&#39;input[name=first]&#39;) // 选择name属性等于first的input元素 
-2.jQuery 的链式操作是怎样的 关于链式操作，我们先来看代码： $(&#39;#test&#39;).find(&#39;.red&#39;).addClass(&#34;blue&#34;) 
-如代码所见，链式操作就是选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来。
-之所以能这么操作，是因为return this之后，返回了当前调用的这个方法的实例对象this，那就可以继续访问自己的原型了。例： addClass(className) { for (let i = 0; i &lt; this.elements.length; i++) { const element = this.elements[i] element.classList.add(className) } return this } 
-3.jQuery 如何创建元素 还是先看源码： let elements if (typeof selectorOrArrayOrTemplate === &#34;string&#34;) { if (selectorOrArrayOrTemplate[0] === &#34;&lt;&#34;) { // 创建 div  elements = [createElement(selectorOrArrayOrTemplate)] } else { // 查找 div  elements = document.
-        </div>
-          <a href="/posts/jquery%E5%8A%9F%E8%83%BD%E6%80%BB%E7%BB%93/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/jquery%E5%8A%9F%E8%83%BD%E6%80%BB%E7%BB%93/" class="link black dim">
+              jQuery功能总结
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/" class="link black dim">
@@ -215,12 +220,6 @@ EventBus eventBus 提供了 on、off 和 trigger 等 API，on 用于监听事件
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="link black dim">
               JS对象基本用法
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/js%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/" class="link black dim">
-              JS的基本语法
             </a>
           </h2>
         
