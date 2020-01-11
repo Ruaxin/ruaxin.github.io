@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-cn">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -26,17 +26,12 @@
     
 
     <meta property="og:title" content="JS对象基本用法" />
-<meta property="og:description" content="JS对象基本用法 1 声明对象的两种语法 写法1：
-let obj = {&#39;name&#39;: &#39;frank&#39;, &#39;age&#39;: 18}  写法2：
-let obj = new Objext({&#39;name&#39;: &#39;frank&#39;})  细节：
+<meta property="og:description" content="JS对象基本用法 1 声明对象的两种语法 写法1： let obj = {&#39;name&#39;: &#39;frank&#39;, &#39;age&#39;: 18}  写法2： let obj = new Objext({&#39;name&#39;: &#39;frank&#39;})  细节：
 - 键名是字符串，不是标识符，可以包括任意字符 - 引号可省略，省略之后就只能写标识符 - 就算引号省略了，键名也还是字符串
-2 如何删除对象的属性 写法1：
-delete obj.xxx  写法2：
-delete obj[&#39;xxx&#39;]  3 如何查看对象的属性 1.查看自身所有属性 Object.keys(obj)  2.查看自身所有属性的值 Object.values(obj)  3.查看自身所有属性和值 Object.entries(obj)  4.查看自身&#43;共有属性 写法1：
-console.dir(obj)  写法2：
-obj.__proto__  5.两种方法查看单个属性 中括号语法：
-obj[&#39;key&#39;]  点语法：
-obj.key  重点
+2 如何删除对象的属性 写法1： delete obj.xxx  写法2： delete obj[&#39;xxx&#39;] 
+3 如何查看对象的属性 1.查看自身所有属性 Object.keys(obj)  2.查看自身所有属性的值 Object.values(obj)  3.查看自身所有属性和值 Object.entries(obj)  4.查看自身&#43;共有属性 写法1： console.dir(obj)  写法2： obj.__proto__ 
+5.两种方法查看单个属性 中括号语法： obj[&#39;key&#39;]  点语法： obj.key 
+重点
 - obj.name 等价于 obj[&lsquo;name&rsquo;]
 - obj.name 不等价于 obj[name]" />
 <meta property="og:type" content="article" />
@@ -44,17 +39,12 @@ obj.key  重点
 <meta property="article:published_time" content="2019-11-10T12:05:40+08:00" />
 <meta property="article:modified_time" content="2019-11-10T12:05:40+08:00" />
 <meta itemprop="name" content="JS对象基本用法">
-<meta itemprop="description" content="JS对象基本用法 1 声明对象的两种语法 写法1：
-let obj = {&#39;name&#39;: &#39;frank&#39;, &#39;age&#39;: 18}  写法2：
-let obj = new Objext({&#39;name&#39;: &#39;frank&#39;})  细节：
+<meta itemprop="description" content="JS对象基本用法 1 声明对象的两种语法 写法1： let obj = {&#39;name&#39;: &#39;frank&#39;, &#39;age&#39;: 18}  写法2： let obj = new Objext({&#39;name&#39;: &#39;frank&#39;})  细节：
 - 键名是字符串，不是标识符，可以包括任意字符 - 引号可省略，省略之后就只能写标识符 - 就算引号省略了，键名也还是字符串
-2 如何删除对象的属性 写法1：
-delete obj.xxx  写法2：
-delete obj[&#39;xxx&#39;]  3 如何查看对象的属性 1.查看自身所有属性 Object.keys(obj)  2.查看自身所有属性的值 Object.values(obj)  3.查看自身所有属性和值 Object.entries(obj)  4.查看自身&#43;共有属性 写法1：
-console.dir(obj)  写法2：
-obj.__proto__  5.两种方法查看单个属性 中括号语法：
-obj[&#39;key&#39;]  点语法：
-obj.key  重点
+2 如何删除对象的属性 写法1： delete obj.xxx  写法2： delete obj[&#39;xxx&#39;] 
+3 如何查看对象的属性 1.查看自身所有属性 Object.keys(obj)  2.查看自身所有属性的值 Object.values(obj)  3.查看自身所有属性和值 Object.entries(obj)  4.查看自身&#43;共有属性 写法1： console.dir(obj)  写法2： obj.__proto__ 
+5.两种方法查看单个属性 中括号语法： obj[&#39;key&#39;]  点语法： obj.key 
+重点
 - obj.name 等价于 obj[&lsquo;name&rsquo;]
 - obj.name 不等价于 obj[name]">
 
@@ -68,17 +58,12 @@ obj.key  重点
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="JS对象基本用法"/>
-<meta name="twitter:description" content="JS对象基本用法 1 声明对象的两种语法 写法1：
-let obj = {&#39;name&#39;: &#39;frank&#39;, &#39;age&#39;: 18}  写法2：
-let obj = new Objext({&#39;name&#39;: &#39;frank&#39;})  细节：
+<meta name="twitter:description" content="JS对象基本用法 1 声明对象的两种语法 写法1： let obj = {&#39;name&#39;: &#39;frank&#39;, &#39;age&#39;: 18}  写法2： let obj = new Objext({&#39;name&#39;: &#39;frank&#39;})  细节：
 - 键名是字符串，不是标识符，可以包括任意字符 - 引号可省略，省略之后就只能写标识符 - 就算引号省略了，键名也还是字符串
-2 如何删除对象的属性 写法1：
-delete obj.xxx  写法2：
-delete obj[&#39;xxx&#39;]  3 如何查看对象的属性 1.查看自身所有属性 Object.keys(obj)  2.查看自身所有属性的值 Object.values(obj)  3.查看自身所有属性和值 Object.entries(obj)  4.查看自身&#43;共有属性 写法1：
-console.dir(obj)  写法2：
-obj.__proto__  5.两种方法查看单个属性 中括号语法：
-obj[&#39;key&#39;]  点语法：
-obj.key  重点
+2 如何删除对象的属性 写法1： delete obj.xxx  写法2： delete obj[&#39;xxx&#39;] 
+3 如何查看对象的属性 1.查看自身所有属性 Object.keys(obj)  2.查看自身所有属性的值 Object.values(obj)  3.查看自身所有属性和值 Object.entries(obj)  4.查看自身&#43;共有属性 写法1： console.dir(obj)  写法2： obj.__proto__ 
+5.两种方法查看单个属性 中括号语法： obj[&#39;key&#39;]  点语法： obj.key 
+重点
 - obj.name 等价于 obj[&lsquo;name&rsquo;]
 - obj.name 不等价于 obj[name]"/>
 
@@ -100,16 +85,6 @@ obj.key  重点
     <div class="flex-l items-center">
       
 
-      
-        <ul class="pl0 mr3">
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/about/" title="About page">
-              About
-            </a>
-          </li>
-          
-        </ul>
       
       
 
@@ -155,73 +130,60 @@ obj.key  重点
 
 <h2 id="1-声明对象的两种语法">1 声明对象的两种语法</h2>
 
-<p>写法1：</p>
-
-<pre><code class="language-JavaScript">let obj = {'name': 'frank', 'age': 18}
-</code></pre>
-
-<p>写法2：</p>
-
-<pre><code class="language-JavaScript">let obj = new Objext({'name': 'frank'})
-</code></pre>
-
-<p>细节：<br />
+<p>写法1：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#e6db74">&#39;name&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;frank&#39;</span>, <span style="color:#e6db74">&#39;age&#39;</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">18</span>}
+</code></pre></div>
+写法2：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Objext</span>({<span style="color:#e6db74">&#39;name&#39;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;frank&#39;</span>})
+</code></pre></div>
+细节：<br />
 - 键名是字符串，不是标识符，可以包括任意字符
 - 引号可省略，省略之后就只能写标识符
 - 就算引号省略了，键名也还是字符串</p>
 
 <h2 id="2-如何删除对象的属性">2 如何删除对象的属性</h2>
 
-<p>写法1：</p>
-
-<pre><code class="language-JavaScript">delete obj.xxx
-</code></pre>
-
-<p>写法2：</p>
-
-<pre><code class="language-JavaScript">delete obj['xxx']
-</code></pre>
+<p>写法1：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">xxx</span>
+</code></pre></div>
+写法2：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">delete</span> <span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#39;xxx&#39;</span>]
+</code></pre></div></p>
 
 <h2 id="3-如何查看对象的属性">3 如何查看对象的属性</h2>
 
 <h3 id="1-查看自身所有属性">1.查看自身所有属性</h3>
 
-<pre><code class="language-JavaScript">Object.keys(obj)
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Object.<span style="color:#a6e22e">keys</span>(<span style="color:#a6e22e">obj</span>)
+</code></pre></div>
 
 <h3 id="2-查看自身所有属性的值">2.查看自身所有属性的值</h3>
 
-<pre><code class="language-JavaScript">Object.values(obj)
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Object.<span style="color:#a6e22e">values</span>(<span style="color:#a6e22e">obj</span>)
+</code></pre></div>
 
 <h3 id="3-查看自身所有属性和值">3.查看自身所有属性和值</h3>
 
-<pre><code class="language-JavaScript">Object.entries(obj)
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Object.<span style="color:#a6e22e">entries</span>(<span style="color:#a6e22e">obj</span>)
+</code></pre></div>
 
 <h3 id="4-查看自身-共有属性">4.查看自身+共有属性</h3>
 
-<p>写法1：</p>
-
-<pre><code class="language-JavaScript">console.dir(obj)
-</code></pre>
-
-<p>写法2：</p>
-
-<pre><code class="language-JavaScript">obj.__proto__
-</code></pre>
+<p>写法1：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">dir</span>(<span style="color:#a6e22e">obj</span>)
+</code></pre></div>
+写法2：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">__proto__</span>
+</code></pre></div></p>
 
 <h3 id="5-两种方法查看单个属性">5.两种方法查看单个属性</h3>
 
-<p>中括号语法：</p>
-
-<pre><code class="language-JavaScript">obj['key']
-</code></pre>
-
-<p>点语法：</p>
-
-<pre><code class="language-JavaScript">obj.key
-</code></pre>
+<p>中括号语法：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#39;key&#39;</span>]
+</code></pre></div>
+点语法：
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">key</span>
+</code></pre></div></p>
 
 <p><strong>重点</strong><br />
 - obj.name 等价于 obj[&lsquo;name&rsquo;]<br />
@@ -232,35 +194,32 @@ obj.key  重点
 
 <h3 id="1-直接赋值">1.直接赋值</h3>
 
-<pre><code class="language-JavaScript">let obj = {name: 'frank'}
-obj.name = 'frank'
-obj['name'] = 'frank'
-obj['na' + 'me'] = 'frank'
-let key = 'name';obj[key] = 'frank'
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;frank&#39;</span>}
+<span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;frank&#39;</span>
+<span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#39;name&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;frank&#39;</span>
+<span style="color:#a6e22e">obj</span>[<span style="color:#e6db74">&#39;na&#39;</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;me&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;frank&#39;</span>
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">key</span> <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;name&#39;</span>;<span style="color:#a6e22e">obj</span>[<span style="color:#a6e22e">key</span>] <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;frank&#39;</span>
+</code></pre></div>
 
 <h3 id="2-批量赋值">2.批量赋值</h3>
 
-<pre><code class="language-JavaScript">Object.assign(obj, {age:18,gender:'nam'})
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">Object.<span style="color:#a6e22e">assign</span>(<span style="color:#a6e22e">obj</span>, {<span style="color:#a6e22e">age</span><span style="color:#f92672">:</span><span style="color:#ae81ff">18</span>,<span style="color:#a6e22e">gender</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;nam&#39;</span>})
+</code></pre></div>
 
 <h3 id="3-共有属性的修改法">3.共有属性的修改法</h3>
 
-<pre><code class="language-JavaScript">let common = {kind:'human'}
-let obj = Object.create(common)
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">let</span> <span style="color:#a6e22e">common</span> <span style="color:#f92672">=</span> {<span style="color:#a6e22e">kind</span><span style="color:#f92672">:</span><span style="color:#e6db74">&#39;human&#39;</span>}
+<span style="color:#66d9ef">let</span> <span style="color:#a6e22e">obj</span> <span style="color:#f92672">=</span> Object.<span style="color:#a6e22e">create</span>(<span style="color:#a6e22e">common</span>)
+</code></pre></div>
 
 <h2 id="5-name-in-obj和obj-hasownproperty-name-的区别">5 &lsquo;name&rsquo; in obj和obj.hasOwnProperty(&lsquo;name&rsquo;) 的区别</h2>
 
-<p>判断是否有这个属性是用</p>
-
-<pre><code class="language-JavaScript">'name' in obj
-</code></pre>
-
-<p>判断一个属性是自身的还是共有的用</p>
-
-<pre><code class="language-JavaScript">obj.hasOwnProperty('name')
-</code></pre>
+<p>判断是否有这个属性是用
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#e6db74">&#39;name&#39;</span> <span style="color:#66d9ef">in</span> <span style="color:#a6e22e">obj</span>
+</code></pre></div>
+判断一个属性是自身的还是共有的用
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">obj</span>.<span style="color:#a6e22e">hasOwnProperty</span>(<span style="color:#e6db74">&#39;name&#39;</span>)
+</code></pre></div></p>
 <ul class="pa0">
   
 </ul>

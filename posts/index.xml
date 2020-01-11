@@ -5,7 +5,7 @@
     <link>http://localhost:1313/posts/</link>
     <description>Recent content in Posts on RUAX的博客</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-Hans</language>
+    <language>zh-cn</language>
     <lastBuildDate>Tue, 07 Jan 2020 17:32:37 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
@@ -17,7 +17,7 @@
       <pubDate>Tue, 07 Jan 2020 17:32:37 +0800</pubDate>
       
       <guid>http://localhost:1313/posts/%E6%B5%85%E6%9E%90vue/</guid>
-      <description>Vue的两个版本  完整版vue.js 完整版：同时包含编译器和运行时的版本。 编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。 只包含运行时版vue.runtime.js 运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。      Vue完整版 Vue非完整版     特点 有compiler 没有compiler   视图 写造HTML里或者写在template选项 写在render函数里用h来创建标签   cdn引入 vue.js vue.runtime.js   webpack引入 需要配置alias 默认使用此版   @vue/cli引入 需要额外配置 默认使用此版    template 和 render  template：一个字符串模板作为 Vue 实例的标识使用。模板将会 替换 挂载的元素。挂载元素的内容都将被忽略，除非模板的内容有分发插槽。如果值以 # 开始，则它将被用作选择符，并使用匹配元素的 innerHTML 作为模板。 render：字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。如果组件是一个函数组件，渲染函数还会接收一个额外的 context 参数，为没有实例的函数组件提供上下文信息。Vue 选项中的 render 函数若存在，则 Vue 构造函数不会从 template 选项或通过 el 选项指定的挂载元素中提取出的 HTML 模板编译渲染函数。</description>
+      <description>Vue的两个版本  完整版vue.js 完整版：同时包含编译器和运行时的版本。 编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。 只包含运行时版vue.runtime.js 运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。      Vue完整版 Vue非完整版     特点 有compiler 没有compiler   视图 写造HTML里或者写在template选项 写在render函数里用h来创建标签   cdn引入 vue.js vue.runtime.js   webpack引入 需要配置alias 默认使用此版   @vue/cli引入 需要额外配置 默认使用此版    template 和 render  template：一个字符串模板作为 Vue 实例的标识使用。模板将会 替换 挂载的元素。挂载元素的内容都将被忽略，除非模板的内容有分发插槽。如果值以 # 开始，则它将被用作选择符，并使用匹配元素的 innerHTML 作为模板。 render：字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。如果组件是一个函数组件，渲染函数还会接收一个额外的 context 参数，为没有实例的函数组件提供上下文信息。Vue 选项中的 render 函数若存在，则 Vue 构造函数不会从 template 选项或通过 el 选项指定的挂载元素中提取出的 HTML 模板编译渲染函数。  // 需要编译器 new Vue({ template: &amp;#39;&amp;lt;div&amp;gt;{{ hi }}&amp;lt;/div&amp;gt;&amp;#39; }) // 不需要编译器 new Vue({ render (h) { return h(&amp;#39;div&amp;#39;, this.</description>
     </item>
     
     <item>
@@ -29,11 +29,8 @@
       <description>什么是MVC 模型model用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型。一旦模型的数据发生变化，模型将通知有关的视图。
 视图view是它在屏幕上的表示，描绘的是model的当前状态。当模型的数据发生变化，视图相应地得到刷新自己的机会。
 控制器controller定义用户界面对用户输入的响应方式，起到不同层面间的组织作用，用于控制应用程序的流程，它处理用户的行为和数据model上的改变。
-M:数据相关都放到m
-const m = { data: {},//数据 create(){},//增 delete(){},//删 update(){},//改 get(){}//查 }  V:视图相关都放到v
-const v = { el: ,//元素 html: ``,//页面 init(){},//初始化 render(){}//更新 }  C:控制器相关的都放在c
-const c = { events:{},//事件 add(){},//方法 }  EventBus eventBus 提供了 on、off 和 trigger 等 API，on 用于监听事件，trigger 用域触发事件。主要用于对象间通信,使用 eventBus 可以满足最小知识原则，m 和 v 互相不知道对方的细节，但是却可以调用对方的功能.
-const c = { eventBus.on(&#39;m:updated&#39;, () =&amp;gt; { v.render(m.data.n) })//在控制器中监听v的更新事件 }  表驱动编程 表驱动法是一种编程模式(scheme)——从表里面查找信息而不使用逻辑语句(if和case)。事实上，凡是能通过逻辑语句来选择的事物，都可以通过查表来选择。对简单的情况而言，使用逻辑语句更为容易和直白。但随着逻辑链的越来越发杂，查表法也就愈发显得更具吸引力。 比如：</description>
+M:数据相关都放到m const m = { data: {},//数据  create(){},//增  delete(){},//删  update(){},//改  get(){}//查 }  V:视图相关都放到v const v = { el: ,//元素  html: ``,//页面  init(){},//初始化  render(){}//更新 }  C:控制器相关的都放在c const c = { events:{},//事件  add(){},//方法 } 
+EventBus eventBus 提供了 on、off 和 trigger 等 API，on 用于监听事件，trigger 用域触发事件。主要用于对象间通信,使用 eventBus 可以满足最小知识原则，m 和 v 互相不知道对方的细节，但是却可以调用对方的功能. const c = { eventBus.on(&amp;#39;m:updated&amp;#39;, () =&amp;gt; { v.</description>
     </item>
     
     <item>
@@ -43,12 +40,11 @@ const c = { eventBus.on(&#39;m:updated&#39;, () =&amp;gt; { v.render(m.data.n) }
       
       <guid>http://localhost:1313/posts/jquery%E5%8A%9F%E8%83%BD%E6%80%BB%E7%BB%93/</guid>
       <description>jQuery功能总结 1.jQuery 如何获取元素 jQuery()描述: 接受一个包含一个CSS选择器的字符串，用于匹配的一组元素。
-关于如何获取元素，jQuery是这样做的，我们将一个选择表达式，放进构造函数jQuery()（简写为$），然后就能得到被选中的元素。
-　$(document) //选择整个文档对象 $(&#39;#myId&#39;) //选择ID为myId的网页元素 $(&#39;div.myClass&#39;) // 选择class为myClass的div元素 $(&#39;input[name=first]&#39;) // 选择name属性等于first的input元素  2.jQuery 的链式操作是怎样的 关于链式操作，我们先来看代码：
-　$(&#39;#test&#39;).find(&#39;.red&#39;).addClass(&amp;quot;blue&amp;quot;)  如代码所见，链式操作就是选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来。
-之所以能这么操作，是因为return this之后，返回了当前调用的这个方法的实例对象this，那就可以继续访问自己的原型了。例：
- addClass(className) { for (let i = 0; i &amp;lt; this.elements.length; i++) { const element = this.elements[i] element.classList.add(className) } return this }  3.jQuery 如何创建元素 还是先看源码：
- let elements if (typeof selectorOrArrayOrTemplate === &amp;quot;string&amp;quot;) { if (selectorOrArrayOrTemplate[0] === &amp;quot;&amp;lt;&amp;quot;) { // 创建 div elements = [createElement(selectorOrArrayOrTemplate)] } else { // 查找 div elements = document.</description>
+关于如何获取元素，jQuery是这样做的，我们将一个选择表达式，放进构造函数jQuery()（简写为$），然后就能得到被选中的元素。 $(document) //选择整个文档对象  $(&amp;#39;#myId&amp;#39;) //选择ID为myId的网页元素  $(&amp;#39;div.myClass&amp;#39;) // 选择class为myClass的div元素  $(&amp;#39;input[name=first]&amp;#39;) // 选择name属性等于first的input元素 
+2.jQuery 的链式操作是怎样的 关于链式操作，我们先来看代码： $(&amp;#39;#test&amp;#39;).find(&amp;#39;.red&amp;#39;).addClass(&amp;#34;blue&amp;#34;) 
+如代码所见，链式操作就是选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来。
+之所以能这么操作，是因为return this之后，返回了当前调用的这个方法的实例对象this，那就可以继续访问自己的原型了。例： addClass(className) { for (let i = 0; i &amp;lt; this.elements.length; i++) { const element = this.elements[i] element.classList.add(className) } return this } 
+3.jQuery 如何创建元素 还是先看源码： let elements if (typeof selectorOrArrayOrTemplate === &amp;#34;string&amp;#34;) { if (selectorOrArrayOrTemplate[0] === &amp;#34;&amp;lt;&amp;#34;) { // 创建 div  elements = [createElement(selectorOrArrayOrTemplate)] } else { // 查找 div  elements = document.</description>
     </item>
     
     <item>
@@ -57,7 +53,7 @@ const c = { eventBus.on(&#39;m:updated&#39;, () =&amp;gt; { v.render(m.data.n) }
       <pubDate>Wed, 20 Nov 2019 15:41:07 +0800</pubDate>
       
       <guid>http://localhost:1313/posts/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95/</guid>
-      <description>排序算法 选择排序 let selectSort = (arr) =&amp;gt; { if (arr.length === 0) { console.log(&amp;quot;输入的为空数组！&amp;quot;) } else { for (let i = 0; i &amp;lt; arr.length - 1; i++) { let j = minIndex(arr.slice(i)) + i if (j !== i) { swap(arr, i, j) } } } return arr } let minIndex = (arr) =&amp;gt; { let index = 0 for (let i = 1; i &amp;lt; arr.length; i++) { if (arr[i] &amp;lt; arr[index]) { index = i } } return index } let swap = (arr, i, j) =&amp;gt; { let temp = arr[i] arr[i] = arr[j] arr[j] = temp }  快速排序 let quickSort = (arr) =&amp;gt; { if (arr.</description>
+      <description>排序算法 选择排序 let selectSort = (arr) =&amp;gt; { if (arr.length === 0) { console.log(&amp;#34;输入的为空数组！&amp;#34;) } else { for (let i = 0; i &amp;lt; arr.length - 1; i++) { let j = minIndex(arr.slice(i)) + i if (j !== i) { swap(arr, i, j) } } } return arr } let minIndex = (arr) =&amp;gt; { let index = 0 for (let i = 1; i &amp;lt; arr.length; i++) { if (arr[i] &amp;lt; arr[index]) { index = i } } return index } let swap = (arr, i, j) =&amp;gt; { let temp = arr[i] arr[i] = arr[j] arr[j] = temp }  快速排序 let quickSort = (arr) =&amp;gt; { if (arr.</description>
     </item>
     
     <item>
@@ -66,11 +62,9 @@ const c = { eventBus.on(&#39;m:updated&#39;, () =&amp;gt; { v.render(m.data.n) }
       <pubDate>Tue, 12 Nov 2019 21:50:29 +0800</pubDate>
       
       <guid>http://localhost:1313/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/</guid>
-      <description>JS函数的执行时机 先来看以下的这段代码
-let i = 0 for(i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) }//结果会打印出6个6  接下来解释一下为什么会打印出6个6：
+      <description>JS函数的执行时机 先来看以下的这段代码 let i = 0 for(i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) }//结果会打印出6个6  接下来解释一下为什么会打印出6个6：
 由于在执行setTimeout之前，先会完成for循环，并且因为i是在外面定义的，所以for循环里只有一个i。完成循环后，i的值为6，再之后执行6次setTimeout，最终打印出6个6。
-如果把代码改成这样，就能打印出0,1,2,3,4,5
-for(let i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) }//结果会打印出0,1,2,3,4,5  因为每次循环都会多创建一个i，就生成了6个不同的值。
+如果把代码改成这样，就能打印出0,1,2,3,4,5 for(let i = 0; i&amp;lt;6; i++){ setTimeout(()=&amp;gt;{ console.log(i) },0) }//结果会打印出0,1,2,3,4,5  因为每次循环都会多创建一个i，就生成了6个不同的值。
 let i = 0 let fn = (a) =&amp;gt; { setTimeout(() =&amp;gt; { console.log(a) }, 0) } for (i = 0; i &amp;lt; 6; i++) { fn(i) }  这样也能打印出0,1,2,3,4,5。个人认为可能和上一段代码一样，每次循环都会生成一个a，这样就生成了6个不同的a值。</description>
     </item>
     
@@ -80,17 +74,12 @@ let i = 0 let fn = (a) =&amp;gt; { setTimeout(() =&amp;gt; { console.log(a) }, 0
       <pubDate>Sun, 10 Nov 2019 12:05:40 +0800</pubDate>
       
       <guid>http://localhost:1313/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/</guid>
-      <description>JS对象基本用法 1 声明对象的两种语法 写法1：
-let obj = {&#39;name&#39;: &#39;frank&#39;, &#39;age&#39;: 18}  写法2：
-let obj = new Objext({&#39;name&#39;: &#39;frank&#39;})  细节：
+      <description>JS对象基本用法 1 声明对象的两种语法 写法1： let obj = {&amp;#39;name&amp;#39;: &amp;#39;frank&amp;#39;, &amp;#39;age&amp;#39;: 18}  写法2： let obj = new Objext({&amp;#39;name&amp;#39;: &amp;#39;frank&amp;#39;})  细节：
 - 键名是字符串，不是标识符，可以包括任意字符 - 引号可省略，省略之后就只能写标识符 - 就算引号省略了，键名也还是字符串
-2 如何删除对象的属性 写法1：
-delete obj.xxx  写法2：
-delete obj[&#39;xxx&#39;]  3 如何查看对象的属性 1.查看自身所有属性 Object.keys(obj)  2.查看自身所有属性的值 Object.values(obj)  3.查看自身所有属性和值 Object.entries(obj)  4.查看自身+共有属性 写法1：
-console.dir(obj)  写法2：
-obj.__proto__  5.两种方法查看单个属性 中括号语法：
-obj[&#39;key&#39;]  点语法：
-obj.key  重点
+2 如何删除对象的属性 写法1： delete obj.xxx  写法2： delete obj[&amp;#39;xxx&amp;#39;] 
+3 如何查看对象的属性 1.查看自身所有属性 Object.keys(obj)  2.查看自身所有属性的值 Object.values(obj)  3.查看自身所有属性和值 Object.entries(obj)  4.查看自身+共有属性 写法1： console.dir(obj)  写法2： obj.__proto__ 
+5.两种方法查看单个属性 中括号语法： obj[&amp;#39;key&amp;#39;]  点语法： obj.key 
+重点
 - obj.name 等价于 obj[&amp;lsquo;name&amp;rsquo;]
 - obj.name 不等价于 obj[name]</description>
     </item>
@@ -123,9 +112,7 @@ var a = 1和var a=1没有区别
 2. 后面的字符，除了上面的，还可以有数字
 标识符错误示例：
 3. if else 语句 语法: 1. if(表达式){语句1}else{语句2} 2. {}可以在只有一句时省略
-代码示例：
-if (m === 3) { // 满足条件时，执行的语句 } else { // 不满足条件时，执行的语句 }  if else(else代码块总是与离自己最近的那个if语句配对):
-if (m === 0) { // .</description>
+代码示例： if (m === 3) { // 满足条件时，执行的语句 } else { // 不满足条件时，执行的语句 }  if else(else代码块总是与离自己最近的那个if语句配对): if (m === 0) { // .</description>
     </item>
     
     <item>
@@ -167,8 +154,7 @@ curl -v http://baidu.com curl -s -v -- https://baidu.com    </description>
  缩放 scale
  选择 rotate
  倾斜 skew   具体内容：https://developer.mozilla.org/zh-CN/docs/Web/CSS/transform
-红心动画代码示例（transform）:
-&amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;quot;utf-8&amp;quot;&amp;gt; &amp;lt;title&amp;gt;JS Bin&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;quot;heart&amp;quot;&amp;gt; &amp;lt;div class=&amp;quot;left&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;right&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;quot;bottom&amp;quot;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt;  * { box-sizing: border-box; } #heart { display: inline-block; margin: 100px; position: relative; transition: all 1s; } #heart:hover { transform: scale(1.</description>
+红心动画代码示例（transform）: &amp;lt;!DOCTYPE html&amp;gt; &amp;lt;html&amp;gt; &amp;lt;head&amp;gt; &amp;lt;meta charset=&amp;#34;utf-8&amp;#34;&amp;gt; &amp;lt;title&amp;gt;JS Bin&amp;lt;/title&amp;gt; &amp;lt;/head&amp;gt; &amp;lt;body&amp;gt; &amp;lt;div id=&amp;#34;heart&amp;#34;&amp;gt; &amp;lt;div class=&amp;#34;left&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;right&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;div class=&amp;#34;bottom&amp;#34;&amp;gt;&amp;lt;/div&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/body&amp;gt; &amp;lt;/html&amp;gt; * { box-sizing: border-box; } #heart { display: inline-block; margin: 100px; position: relative; transition: all 1s; } #heart:hover { transform: scale(1.</description>
     </item>
     
     <item>
@@ -187,21 +173,22 @@ javascript:代码
 mailto:邮箱
 tel:手机号 ID 跳转到指定标签
 href=#xxxx 代码示例:
- &amp;lt;body&amp;gt; &amp;lt;p&amp;gt;1&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;2&amp;lt;/p&amp;gt; &amp;lt;p id=&amp;quot;xxx&amp;quot;&amp;gt;3&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;4&amp;lt;/p&amp;gt; &amp;lt;a href=&amp;quot;https://baidu.com&amp;quot; target=&amp;quot;_blank&amp;quot;&amp;gt;超链接&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;/a/b/c.html&amp;quot;&amp;gt;c.html&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;index.html&amp;quot;&amp;gt;index&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;javascript:alert(1);&amp;quot;&amp;gt;JavaScript伪协议&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;javascript:;&amp;quot;&amp;gt;空的伪协议&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;#xxx&amp;quot;&amp;gt;查看xxx&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;mailto:xxxxxxxx@qq.com&amp;quot;&amp;gt;发邮件&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;quot;tel:10010&amp;quot;&amp;gt;打电话&amp;lt;/a&amp;gt; &amp;lt;/body&amp;gt;   ##### 1.2 a 的 target 的取值
+&amp;lt;body&amp;gt; &amp;lt;p&amp;gt;1&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;2&amp;lt;/p&amp;gt; &amp;lt;p id=&amp;#34;xxx&amp;#34;&amp;gt;3&amp;lt;/p&amp;gt; &amp;lt;p&amp;gt;4&amp;lt;/p&amp;gt; &amp;lt;a href=&amp;#34;https://baidu.com&amp;#34; target=&amp;#34;_blank&amp;#34;&amp;gt;超链接&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;#34;/a/b/c.html&amp;#34;&amp;gt;c.html&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;#34;index.html&amp;#34;&amp;gt;index&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;#34;javascript:alert(1);&amp;#34;&amp;gt;JavaScript伪协议&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;#34;javascript:;&amp;#34;&amp;gt;空的伪协议&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;#34;#xxx&amp;#34;&amp;gt;查看xxx&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;#34;mailto:xxxxxxxx@qq.com&amp;#34;&amp;gt;发邮件&amp;lt;/a&amp;gt; &amp;lt;a href=&amp;#34;tel:10010&amp;#34;&amp;gt;打电话&amp;lt;/a&amp;gt; &amp;lt;/body&amp;gt;   ##### 1.2 a 的 target 的取值
  内置名字
 _blank（新页面）
 _top（最顶层页面）
 _parent（当前所在页面的上一层）
-_self（当前页面）</description>
+_self（当前页面）
+ 程序员命名 window 的 name（=&amp;ldquo;xxx&amp;rdquo;，会覆盖之前的页面）</description>
     </item>
     
     <item>
-      <title>HTML入门笔记1</title>
+      <title>HTML入门笔记</title>
       <link>http://localhost:1313/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</link>
       <pubDate>Wed, 02 Oct 2019 18:07:08 +0800</pubDate>
       
       <guid>http://localhost:1313/posts/html%E5%85%A5%E9%97%A8%E7%AC%94%E8%AE%B0/</guid>
-      <description> HTML 入门笔记 1 1.HTML 是谁发明的 蒂莫西·约翰·伯纳斯-李爵士(英语：Sir Timothy John Berners-Lee，1955 年 6 月 8 日－） 2.HTML 起手应该写什么 emmet 感叹号
+      <description> HTML 入门笔记 1.HTML 是谁发明的 蒂莫西·约翰·伯纳斯-李爵士(英语：Sir Timothy John Berners-Lee，1955 年 6 月 8 日－） 2.HTML 起手应该写什么 emmet 感叹号
 具体操作：！+ Tab
 3.常用的表章节的标签有哪些，分别是什么意思  h1~h6 标题 section 章节 article 文章 p 段落 header 头部 footer 脚部(&amp;copy;版权标志写法:&amp;amp;copy;) main 主要内容 aside 旁支内容 div 划分  示例：
 4.全局属性有哪些  calss(标签) contenteditable(使文本可编辑) hidden(隐藏) id(用来表示全局唯一的标签,但全局唯一性没有保障,最好不用) style(样式) tabindex(Tab 操作,tabindex 不必是连续的,0 表示最后访问,-1 表示不访问) title(添加附加说明)  示例： 关于内容溢出的解决方案： 5.常用的内容标签有哪些，分别是什么意思  ol+li(ol 顺序的列表，li 列表中的项目) ul+li(ul 没有顺序的列表，li 列表中的项目) dl+dt+dd(dl 描述列表，dt 描述对象，dd 描述内容) pre(表示保留原来的格式) hr(下划线) br(换行) a(超链接) em(em 表示语气上的强调) strong(strong 表示内容本身的重要性) code(代码，字体等宽) quote(引用) blockquote(块结构的引用)  示例： 表格优化 </description>

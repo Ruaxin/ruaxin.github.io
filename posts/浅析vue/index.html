@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-cn">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -26,13 +26,13 @@
     
 
     <meta property="og:title" content="浅析Vue" />
-<meta property="og:description" content="Vue的两个版本  完整版vue.js 完整版：同时包含编译器和运行时的版本。 编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。 只包含运行时版vue.runtime.js 运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。      Vue完整版 Vue非完整版     特点 有compiler 没有compiler   视图 写造HTML里或者写在template选项 写在render函数里用h来创建标签   cdn引入 vue.js vue.runtime.js   webpack引入 需要配置alias 默认使用此版   @vue/cli引入 需要额外配置 默认使用此版    template 和 render  template：一个字符串模板作为 Vue 实例的标识使用。模板将会 替换 挂载的元素。挂载元素的内容都将被忽略，除非模板的内容有分发插槽。如果值以 # 开始，则它将被用作选择符，并使用匹配元素的 innerHTML 作为模板。 render：字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。如果组件是一个函数组件，渲染函数还会接收一个额外的 context 参数，为没有实例的函数组件提供上下文信息。Vue 选项中的 render 函数若存在，则 Vue 构造函数不会从 template 选项或通过 el 选项指定的挂载元素中提取出的 HTML 模板编译渲染函数。" />
+<meta property="og:description" content="Vue的两个版本  完整版vue.js 完整版：同时包含编译器和运行时的版本。 编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。 只包含运行时版vue.runtime.js 运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。      Vue完整版 Vue非完整版     特点 有compiler 没有compiler   视图 写造HTML里或者写在template选项 写在render函数里用h来创建标签   cdn引入 vue.js vue.runtime.js   webpack引入 需要配置alias 默认使用此版   @vue/cli引入 需要额外配置 默认使用此版    template 和 render  template：一个字符串模板作为 Vue 实例的标识使用。模板将会 替换 挂载的元素。挂载元素的内容都将被忽略，除非模板的内容有分发插槽。如果值以 # 开始，则它将被用作选择符，并使用匹配元素的 innerHTML 作为模板。 render：字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。如果组件是一个函数组件，渲染函数还会接收一个额外的 context 参数，为没有实例的函数组件提供上下文信息。Vue 选项中的 render 函数若存在，则 Vue 构造函数不会从 template 选项或通过 el 选项指定的挂载元素中提取出的 HTML 模板编译渲染函数。  // 需要编译器 new Vue({ template: &#39;&lt;div&gt;{{ hi }}&lt;/div&gt;&#39; }) // 不需要编译器 new Vue({ render (h) { return h(&#39;div&#39;, this." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://localhost:1313/posts/%E6%B5%85%E6%9E%90vue/" />
 <meta property="article:published_time" content="2020-01-07T17:32:37+08:00" />
 <meta property="article:modified_time" content="2020-01-07T17:32:37+08:00" />
 <meta itemprop="name" content="浅析Vue">
-<meta itemprop="description" content="Vue的两个版本  完整版vue.js 完整版：同时包含编译器和运行时的版本。 编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。 只包含运行时版vue.runtime.js 运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。      Vue完整版 Vue非完整版     特点 有compiler 没有compiler   视图 写造HTML里或者写在template选项 写在render函数里用h来创建标签   cdn引入 vue.js vue.runtime.js   webpack引入 需要配置alias 默认使用此版   @vue/cli引入 需要额外配置 默认使用此版    template 和 render  template：一个字符串模板作为 Vue 实例的标识使用。模板将会 替换 挂载的元素。挂载元素的内容都将被忽略，除非模板的内容有分发插槽。如果值以 # 开始，则它将被用作选择符，并使用匹配元素的 innerHTML 作为模板。 render：字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。如果组件是一个函数组件，渲染函数还会接收一个额外的 context 参数，为没有实例的函数组件提供上下文信息。Vue 选项中的 render 函数若存在，则 Vue 构造函数不会从 template 选项或通过 el 选项指定的挂载元素中提取出的 HTML 模板编译渲染函数。">
+<meta itemprop="description" content="Vue的两个版本  完整版vue.js 完整版：同时包含编译器和运行时的版本。 编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。 只包含运行时版vue.runtime.js 运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。      Vue完整版 Vue非完整版     特点 有compiler 没有compiler   视图 写造HTML里或者写在template选项 写在render函数里用h来创建标签   cdn引入 vue.js vue.runtime.js   webpack引入 需要配置alias 默认使用此版   @vue/cli引入 需要额外配置 默认使用此版    template 和 render  template：一个字符串模板作为 Vue 实例的标识使用。模板将会 替换 挂载的元素。挂载元素的内容都将被忽略，除非模板的内容有分发插槽。如果值以 # 开始，则它将被用作选择符，并使用匹配元素的 innerHTML 作为模板。 render：字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。如果组件是一个函数组件，渲染函数还会接收一个额外的 context 参数，为没有实例的函数组件提供上下文信息。Vue 选项中的 render 函数若存在，则 Vue 构造函数不会从 template 选项或通过 el 选项指定的挂载元素中提取出的 HTML 模板编译渲染函数。  // 需要编译器 new Vue({ template: &#39;&lt;div&gt;{{ hi }}&lt;/div&gt;&#39; }) // 不需要编译器 new Vue({ render (h) { return h(&#39;div&#39;, this.">
 
 
 <meta itemprop="datePublished" content="2020-01-07T17:32:37&#43;08:00" />
@@ -44,7 +44,7 @@
 <meta itemprop="keywords" content="" />
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="浅析Vue"/>
-<meta name="twitter:description" content="Vue的两个版本  完整版vue.js 完整版：同时包含编译器和运行时的版本。 编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。 只包含运行时版vue.runtime.js 运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。      Vue完整版 Vue非完整版     特点 有compiler 没有compiler   视图 写造HTML里或者写在template选项 写在render函数里用h来创建标签   cdn引入 vue.js vue.runtime.js   webpack引入 需要配置alias 默认使用此版   @vue/cli引入 需要额外配置 默认使用此版    template 和 render  template：一个字符串模板作为 Vue 实例的标识使用。模板将会 替换 挂载的元素。挂载元素的内容都将被忽略，除非模板的内容有分发插槽。如果值以 # 开始，则它将被用作选择符，并使用匹配元素的 innerHTML 作为模板。 render：字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。如果组件是一个函数组件，渲染函数还会接收一个额外的 context 参数，为没有实例的函数组件提供上下文信息。Vue 选项中的 render 函数若存在，则 Vue 构造函数不会从 template 选项或通过 el 选项指定的挂载元素中提取出的 HTML 模板编译渲染函数。"/>
+<meta name="twitter:description" content="Vue的两个版本  完整版vue.js 完整版：同时包含编译器和运行时的版本。 编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。 只包含运行时版vue.runtime.js 运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。      Vue完整版 Vue非完整版     特点 有compiler 没有compiler   视图 写造HTML里或者写在template选项 写在render函数里用h来创建标签   cdn引入 vue.js vue.runtime.js   webpack引入 需要配置alias 默认使用此版   @vue/cli引入 需要额外配置 默认使用此版    template 和 render  template：一个字符串模板作为 Vue 实例的标识使用。模板将会 替换 挂载的元素。挂载元素的内容都将被忽略，除非模板的内容有分发插槽。如果值以 # 开始，则它将被用作选择符，并使用匹配元素的 innerHTML 作为模板。 render：字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。如果组件是一个函数组件，渲染函数还会接收一个额外的 context 参数，为没有实例的函数组件提供上下文信息。Vue 选项中的 render 函数若存在，则 Vue 构造函数不会从 template 选项或通过 el 选项指定的挂载元素中提取出的 HTML 模板编译渲染函数。  // 需要编译器 new Vue({ template: &#39;&lt;div&gt;{{ hi }}&lt;/div&gt;&#39; }) // 不需要编译器 new Vue({ render (h) { return h(&#39;div&#39;, this."/>
 
   </head>
 
@@ -64,16 +64,6 @@
     <div class="flex-l items-center">
       
 
-      
-        <ul class="pl0 mr3">
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/about/" title="About page">
-              About
-            </a>
-          </li>
-          
-        </ul>
       
       
 
@@ -176,22 +166,21 @@
 
 <ul>
 <li>template：一个字符串模板作为 Vue 实例的标识使用。模板将会 替换 挂载的元素。挂载元素的内容都将被忽略，除非模板的内容有分发插槽。如果值以 # 开始，则它将被用作选择符，并使用匹配元素的 innerHTML 作为模板。</li>
-
-<li><p>render：字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。如果组件是一个函数组件，渲染函数还会接收一个额外的 context 参数，为没有实例的函数组件提供上下文信息。Vue 选项中的 render 函数若存在，则 Vue 构造函数不会从 template 选项或通过 el 选项指定的挂载元素中提取出的 HTML 模板编译渲染函数。</p>
-
-<pre><code>// 需要编译器
-new Vue({
-template: '&lt;div&gt;{{ hi }}&lt;/div&gt;'
-})
-
-// 不需要编译器
-new Vue({
-render (h) {
-return h('div', this.hi)
-}
-})
-</code></pre></li>
+<li>render：字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。如果组件是一个函数组件，渲染函数还会接收一个额外的 context 参数，为没有实例的函数组件提供上下文信息。Vue 选项中的 render 函数若存在，则 Vue 构造函数不会从 template 选项或通过 el 选项指定的挂载元素中提取出的 HTML 模板编译渲染函数。</li>
 </ul>
+
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// 需要编译器
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+  <span style="color:#a6e22e">template</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#39;&lt;div&gt;{{ hi }}&lt;/div&gt;&#39;</span>
+})
+
+<span style="color:#75715e">// 不需要编译器
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vue</span>({
+  <span style="color:#a6e22e">render</span> (<span style="color:#a6e22e">h</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">h</span>(<span style="color:#e6db74">&#39;div&#39;</span>, <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">hi</span>)
+  }
+})
+</code></pre></div>
 
 <h2 id="补充-在线预览vue项目">补充（在线预览Vue项目）</h2>
 

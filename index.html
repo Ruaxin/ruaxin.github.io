@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh-Hans">
+<html lang="zh-cn">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -57,16 +57,6 @@
     <div class="flex-l items-center">
       
 
-      
-        <ul class="pl0 mr3">
-          
-          <li class="list f5 f4-ns fw4 dib pr3">
-            <a class="hover-white no-underline white-90" href="/about/" title="About page">
-              About
-            </a>
-          </li>
-          
-        </ul>
       
       
 
@@ -135,7 +125,7 @@
             </a>
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          Vue的两个版本  完整版vue.js 完整版：同时包含编译器和运行时的版本。 编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。 只包含运行时版vue.runtime.js 运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。      Vue完整版 Vue非完整版     特点 有compiler 没有compiler   视图 写造HTML里或者写在template选项 写在render函数里用h来创建标签   cdn引入 vue.js vue.runtime.js   webpack引入 需要配置alias 默认使用此版   @vue/cli引入 需要额外配置 默认使用此版    template 和 render  template：一个字符串模板作为 Vue 实例的标识使用。模板将会 替换 挂载的元素。挂载元素的内容都将被忽略，除非模板的内容有分发插槽。如果值以 # 开始，则它将被用作选择符，并使用匹配元素的 innerHTML 作为模板。 render：字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。如果组件是一个函数组件，渲染函数还会接收一个额外的 context 参数，为没有实例的函数组件提供上下文信息。Vue 选项中的 render 函数若存在，则 Vue 构造函数不会从 template 选项或通过 el 选项指定的挂载元素中提取出的 HTML 模板编译渲染函数。
+          Vue的两个版本  完整版vue.js 完整版：同时包含编译器和运行时的版本。 编译器：用来将模板字符串编译成为 JavaScript 渲染函数的代码。 只包含运行时版vue.runtime.js 运行时：用来创建 Vue 实例、渲染并处理虚拟 DOM 等的代码。基本上就是除去编译器的其它一切。 因为运行时版本相比完整版体积要小大约 30%，所以应该尽可能使用这个版本。      Vue完整版 Vue非完整版     特点 有compiler 没有compiler   视图 写造HTML里或者写在template选项 写在render函数里用h来创建标签   cdn引入 vue.js vue.runtime.js   webpack引入 需要配置alias 默认使用此版   @vue/cli引入 需要额外配置 默认使用此版    template 和 render  template：一个字符串模板作为 Vue 实例的标识使用。模板将会 替换 挂载的元素。挂载元素的内容都将被忽略，除非模板的内容有分发插槽。如果值以 # 开始，则它将被用作选择符，并使用匹配元素的 innerHTML 作为模板。 render：字符串模板的代替方案，允许你发挥 JavaScript 最大的编程能力。该渲染函数接收一个 createElement 方法作为第一个参数用来创建 VNode。如果组件是一个函数组件，渲染函数还会接收一个额外的 context 参数，为没有实例的函数组件提供上下文信息。Vue 选项中的 render 函数若存在，则 Vue 构造函数不会从 template 选项或通过 el 选项指定的挂载元素中提取出的 HTML 模板编译渲染函数。  // 需要编译器 new Vue({ template: &#39;&lt;div&gt;{{ hi }}&lt;/div&gt;&#39; }) // 不需要编译器 new Vue({ render (h) { return h(&#39;div&#39;, this.
         </div>
           <a href="/posts/%E6%B5%85%E6%9E%90vue/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
@@ -162,11 +152,8 @@
           什么是MVC 模型model用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型。一旦模型的数据发生变化，模型将通知有关的视图。
 视图view是它在屏幕上的表示，描绘的是model的当前状态。当模型的数据发生变化，视图相应地得到刷新自己的机会。
 控制器controller定义用户界面对用户输入的响应方式，起到不同层面间的组织作用，用于控制应用程序的流程，它处理用户的行为和数据model上的改变。
-M:数据相关都放到m
-const m = { data: {},//数据 create(){},//增 delete(){},//删 update(){},//改 get(){}//查 }  V:视图相关都放到v
-const v = { el: ,//元素 html: ``,//页面 init(){},//初始化 render(){}//更新 }  C:控制器相关的都放在c
-const c = { events:{},//事件 add(){},//方法 }  EventBus eventBus 提供了 on、off 和 trigger 等 API，on 用于监听事件，trigger 用域触发事件。主要用于对象间通信,使用 eventBus 可以满足最小知识原则，m 和 v 互相不知道对方的细节，但是却可以调用对方的功能.
-const c = { eventBus.on('m:updated', () =&gt; { v.render(m.data.n) })//在控制器中监听v的更新事件 }  表驱动编程 表驱动法是一种编程模式(scheme)——从表里面查找信息而不使用逻辑语句(if和case)。事实上，凡是能通过逻辑语句来选择的事物，都可以通过查表来选择。对简单的情况而言，使用逻辑语句更为容易和直白。但随着逻辑链的越来越发杂，查表法也就愈发显得更具吸引力。 比如：
+M:数据相关都放到m const m = { data: {},//数据  create(){},//增  delete(){},//删  update(){},//改  get(){}//查 }  V:视图相关都放到v const v = { el: ,//元素  html: ``,//页面  init(){},//初始化  render(){}//更新 }  C:控制器相关的都放在c const c = { events:{},//事件  add(){},//方法 } 
+EventBus eventBus 提供了 on、off 和 trigger 等 API，on 用于监听事件，trigger 用域触发事件。主要用于对象间通信,使用 eventBus 可以满足最小知识原则，m 和 v 互相不知道对方的细节，但是却可以调用对方的功能. const c = { eventBus.on(&#39;m:updated&#39;, () =&gt; { v.
         </div>
           <a href="/posts/%E6%B5%85%E6%9E%90mvc/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
@@ -191,12 +178,11 @@ const c = { eventBus.on('m:updated', () =&gt; { v.render(m.data.n) })//在控制
         </h1>
         <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
           jQuery功能总结 1.jQuery 如何获取元素 jQuery()描述: 接受一个包含一个CSS选择器的字符串，用于匹配的一组元素。
-关于如何获取元素，jQuery是这样做的，我们将一个选择表达式，放进构造函数jQuery()（简写为$），然后就能得到被选中的元素。
-　$(document) //选择整个文档对象 $('#myId') //选择ID为myId的网页元素 $('div.myClass') // 选择class为myClass的div元素 $('input[name=first]') // 选择name属性等于first的input元素  2.jQuery 的链式操作是怎样的 关于链式操作，我们先来看代码：
-　$('#test').find('.red').addClass(&quot;blue&quot;)  如代码所见，链式操作就是选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来。
-之所以能这么操作，是因为return this之后，返回了当前调用的这个方法的实例对象this，那就可以继续访问自己的原型了。例：
- addClass(className) { for (let i = 0; i &lt; this.elements.length; i++) { const element = this.elements[i] element.classList.add(className) } return this }  3.jQuery 如何创建元素 还是先看源码：
- let elements if (typeof selectorOrArrayOrTemplate === &quot;string&quot;) { if (selectorOrArrayOrTemplate[0] === &quot;&lt;&quot;) { // 创建 div elements = [createElement(selectorOrArrayOrTemplate)] } else { // 查找 div elements = document.
+关于如何获取元素，jQuery是这样做的，我们将一个选择表达式，放进构造函数jQuery()（简写为$），然后就能得到被选中的元素。 $(document) //选择整个文档对象  $(&#39;#myId&#39;) //选择ID为myId的网页元素  $(&#39;div.myClass&#39;) // 选择class为myClass的div元素  $(&#39;input[name=first]&#39;) // 选择name属性等于first的input元素 
+2.jQuery 的链式操作是怎样的 关于链式操作，我们先来看代码： $(&#39;#test&#39;).find(&#39;.red&#39;).addClass(&#34;blue&#34;) 
+如代码所见，链式操作就是选中网页元素以后，可以对它进行一系列操作，并且所有操作可以连接在一起，以链条的形式写出来。
+之所以能这么操作，是因为return this之后，返回了当前调用的这个方法的实例对象this，那就可以继续访问自己的原型了。例： addClass(className) { for (let i = 0; i &lt; this.elements.length; i++) { const element = this.elements[i] element.classList.add(className) } return this } 
+3.jQuery 如何创建元素 还是先看源码： let elements if (typeof selectorOrArrayOrTemplate === &#34;string&#34;) { if (selectorOrArrayOrTemplate[0] === &#34;&lt;&#34;) { // 创建 div  elements = [createElement(selectorOrArrayOrTemplate)] } else { // 查找 div  elements = document.
         </div>
           <a href="/posts/jquery%E5%8A%9F%E8%83%BD%E6%80%BB%E7%BB%93/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
         
