@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>RUAX的博客  | sync 修饰符</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.58.3" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.d98f2eb6bcd1eaedb7edf166bd16af26.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="sync 修饰符" />
+<meta property="og:description" content="sync修饰符 vue sync修饰符的功能是：在一个包含 title prop 的假设的组件中，我们可以用以下方法表达对其赋新值的意图：
+this.$emit(&#39;update:title&#39;, newTitle) 
+然后父组件可以监听那个事件并根据需要更新一个本地的数据属性。 例子：一个&#43;1按钮
+父组件App.vue：
+&lt;template&gt; &lt;div id=&#34;app&#34;&gt; {{val}} &lt;Child :num.sync=&#34;val&#34;/&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Child from &#34;./Child.vue&#34;; export default { data() { return { val: 0 }; }, components: { Child } }; &lt;/script&gt;
+子组件Child.vue：
+&lt;template&gt; &lt;button @click=&#34;$emit(&#39;update:num&#39;,num&#43;&#43;)&#34;&gt;&#43;1&lt;/button&gt; &lt;/template&gt; &lt;script&gt; export default { props: [&#34;num&#34;] }; &lt;/script&gt;
+效果：https://codesandbox.io/s/naughty-shape-3lfp4" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://localhost:1313/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" />
+<meta property="article:published_time" content="2020-01-14T17:28:59+08:00" />
+<meta property="article:modified_time" content="2020-01-14T17:28:59+08:00" />
+<meta itemprop="name" content="sync 修饰符">
+<meta itemprop="description" content="sync修饰符 vue sync修饰符的功能是：在一个包含 title prop 的假设的组件中，我们可以用以下方法表达对其赋新值的意图：
+this.$emit(&#39;update:title&#39;, newTitle) 
+然后父组件可以监听那个事件并根据需要更新一个本地的数据属性。 例子：一个&#43;1按钮
+父组件App.vue：
+&lt;template&gt; &lt;div id=&#34;app&#34;&gt; {{val}} &lt;Child :num.sync=&#34;val&#34;/&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Child from &#34;./Child.vue&#34;; export default { data() { return { val: 0 }; }, components: { Child } }; &lt;/script&gt;
+子组件Child.vue：
+&lt;template&gt; &lt;button @click=&#34;$emit(&#39;update:num&#39;,num&#43;&#43;)&#34;&gt;&#43;1&lt;/button&gt; &lt;/template&gt; &lt;script&gt; export default { props: [&#34;num&#34;] }; &lt;/script&gt;
+效果：https://codesandbox.io/s/naughty-shape-3lfp4">
+
+
+<meta itemprop="datePublished" content="2020-01-14T17:28:59&#43;08:00" />
+<meta itemprop="dateModified" content="2020-01-14T17:28:59&#43;08:00" />
+<meta itemprop="wordCount" content="55">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="sync 修饰符"/>
+<meta name="twitter:description" content="sync修饰符 vue sync修饰符的功能是：在一个包含 title prop 的假设的组件中，我们可以用以下方法表达对其赋新值的意图：
+this.$emit(&#39;update:title&#39;, newTitle) 
+然后父组件可以监听那个事件并根据需要更新一个本地的数据属性。 例子：一个&#43;1按钮
+父组件App.vue：
+&lt;template&gt; &lt;div id=&#34;app&#34;&gt; {{val}} &lt;Child :num.sync=&#34;val&#34;/&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Child from &#34;./Child.vue&#34;; export default { data() { return { val: 0 }; }, components: { Child } }; &lt;/script&gt;
+子组件Child.vue：
+&lt;template&gt; &lt;button @click=&#34;$emit(&#39;update:num&#39;,num&#43;&#43;)&#34;&gt;&#43;1&lt;/button&gt; &lt;/template&gt; &lt;script&gt; export default { props: [&#34;num&#34;] }; &lt;/script&gt;
+效果：https://codesandbox.io/s/naughty-shape-3lfp4"/>
+
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="http://localhost:1313/" class="f3 fw2 hover-white no-underline white-90 dib">
+      RUAX的博客
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+
+    <header class="mt4 w-100">
+      <p class="f6 b helvetica tracked">
+          
+        POSTS
+      </p>
+      <h1 class="f1 athelas mb1">sync 修饰符</h1>
+      
+      <time class="f6 mv4 dib tracked" datetime="2020-01-14T17:28:59&#43;08:00">January 14, 2020</time>
+      
+      
+    </header>
+
+    <section class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l">
+
+<h1 id="sync修饰符">sync修饰符</h1>
+
+<p>vue sync修饰符的功能是：在一个包含 <em>title</em> prop 的假设的组件中，我们可以用以下方法表达对其赋新值的意图：<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">$emit</span>(<span style="color:#e6db74">&#39;update:title&#39;</span>, <span style="color:#a6e22e">newTitle</span>)
+</code></pre></div></p>
+
+<h2 id="然后父组件可以监听那个事件并根据需要更新一个本地的数据属性">然后父组件可以监听那个事件并根据需要更新一个本地的数据属性。</h2>
+
+<p>例子：一个+1按钮<br />
+父组件App.vue：<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">div</span> <span style="color:#a6e22e">id</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;app&#34;</span>&gt;
+    {{<span style="color:#a6e22e">val</span>}}
+    &lt;<span style="color:#f92672">Child</span> <span style="color:#f92672">:num.sync</span><span style="color:#e6db74">=&#34;val&#34;</span>/&gt;
+  &lt;/<span style="color:#f92672">div</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Child</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#34;./Child.vue&#34;</span>;
+
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">data</span>() {
+    <span style="color:#66d9ef">return</span> { <span style="color:#a6e22e">val</span><span style="color:#f92672">:</span> <span style="color:#ae81ff">0</span> };
+  },
+  <span style="color:#a6e22e">components</span><span style="color:#f92672">:</span> { <span style="color:#a6e22e">Child</span> }
+};
+&lt;/<span style="color:#f92672">script</span>&gt;</code></pre></div><br />
+子组件Child.vue：<br />
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-vue" data-lang="vue">&lt;<span style="color:#f92672">template</span>&gt;
+  &lt;<span style="color:#f92672">button</span> <span style="color:#f92672">@click</span><span style="color:#e6db74">=&#34;$emit(&#39;update:num&#39;,num++)&#34;</span>&gt;<span style="color:#960050;background-color:#1e0010">+</span><span style="color:#a6e22e">1</span>&lt;/<span style="color:#f92672">button</span>&gt;
+&lt;/<span style="color:#f92672">template</span>&gt;
+
+&lt;<span style="color:#f92672">script</span>&gt;
+<span style="color:#66d9ef">export</span> <span style="color:#66d9ef">default</span> {
+  <span style="color:#a6e22e">props</span><span style="color:#f92672">:</span> [<span style="color:#e6db74">&#34;num&#34;</span>]
+};
+&lt;/<span style="color:#f92672">script</span>&gt;</code></pre></div></p>
+
+<p>效果：<a href="https://codesandbox.io/s/naughty-shape-3lfp4">https://codesandbox.io/s/naughty-shape-3lfp4</a></p>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6">
+      
+      
+      </div>
+    </section>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="http://localhost:1313/" >
+    &copy; 2020 RUAX的博客
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>

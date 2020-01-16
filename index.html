@@ -33,7 +33,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://localhost:1313/" />
 
-<meta property="og:updated_time" content="2020-01-11T12:53:50+08:00" />
+<meta property="og:updated_time" content="2020-01-14T17:28:59+08:00" />
 <meta itemprop="name" content="RUAX的博客">
 <meta itemprop="description" content="">
 
@@ -120,6 +120,37 @@
       
       <div class="blah w-100">
         <h1 class="f3 fw1 athelas mt0 lh-title">
+          <a href="/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" class="color-inherit dim link">
+            sync 修饰符
+            </a>
+        </h1>
+        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
+          sync修饰符 vue sync修饰符的功能是：在一个包含 title prop 的假设的组件中，我们可以用以下方法表达对其赋新值的意图：
+this.$emit(&#39;update:title&#39;, newTitle) 
+然后父组件可以监听那个事件并根据需要更新一个本地的数据属性。 例子：一个+1按钮
+父组件App.vue：
+&lt;template&gt; &lt;div id=&#34;app&#34;&gt; {{val}} &lt;Child :num.sync=&#34;val&#34;/&gt; &lt;/div&gt; &lt;/template&gt; &lt;script&gt; import Child from &#34;./Child.vue&#34;; export default { data() { return { val: 0 }; }, components: { Child } }; &lt;/script&gt;
+子组件Child.vue：
+&lt;template&gt; &lt;button @click=&#34;$emit(&#39;update:num&#39;,num++)&#34;&gt;+1&lt;/button&gt; &lt;/template&gt; &lt;script&gt; export default { props: [&#34;num&#34;] }; &lt;/script&gt;
+效果：https://codesandbox.io/s/naughty-shape-3lfp4
+        </div>
+          <a href="/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
+        
+      </div>
+    </div>
+  </div>
+</article>
+
+          </div>
+        
+          <div class="relative w-100 mb4">
+            
+<article class="bb b--black-10">
+  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
+    <div class="flex flex-column flex-row-ns">
+      
+      <div class="blah w-100">
+        <h1 class="f3 fw1 athelas mt0 lh-title">
           <a href="/posts/computed%E5%92%8Cwatch/" class="color-inherit dim link">
             computed和watch
             </a>
@@ -164,40 +195,18 @@
 
           </div>
         
-          <div class="relative w-100 mb4">
-            
-<article class="bb b--black-10">
-  <div class="db pv4 ph3 ph0-l no-underline dark-gray">
-    <div class="flex flex-column flex-row-ns">
-      
-      <div class="blah w-100">
-        <h1 class="f3 fw1 athelas mt0 lh-title">
-          <a href="/posts/%E6%B5%85%E6%9E%90mvc/" class="color-inherit dim link">
-            浅析MVC
-            </a>
-        </h1>
-        <div class="f6 f5-l lh-copy nested-copy-line-height nested-links">
-          什么是MVC 模型model用于封装与应用程序的业务逻辑相关的数据以及对数据的处理方法，会有一个或多个视图监听此模型。一旦模型的数据发生变化，模型将通知有关的视图。
-视图view是它在屏幕上的表示，描绘的是model的当前状态。当模型的数据发生变化，视图相应地得到刷新自己的机会。
-控制器controller定义用户界面对用户输入的响应方式，起到不同层面间的组织作用，用于控制应用程序的流程，它处理用户的行为和数据model上的改变。
-M:数据相关都放到m const m = { data: {},//数据  create(){},//增  delete(){},//删  update(){},//改  get(){}//查 }  V:视图相关都放到v const v = { el: ,//元素  html: ``,//页面  init(){},//初始化  render(){}//更新 }  C:控制器相关的都放在c const c = { events:{},//事件  add(){},//方法 } 
-EventBus eventBus 提供了 on、off 和 trigger 等 API，on 用于监听事件，trigger 用域触发事件。主要用于对象间通信,使用 eventBus 可以满足最小知识原则，m 和 v 互相不知道对方的细节，但是却可以调用对方的功能. const c = { eventBus.on(&#39;m:updated&#39;, () =&gt; { v.
-        </div>
-          <a href="/posts/%E6%B5%85%E6%9E%90mvc/" class="ba b--moon-gray bg-light-gray br2 color-inherit dib f7 hover-bg-moon-gray link mt2 ph2 pv1">read more</a>
-        
-      </div>
-    </div>
-  </div>
-</article>
-
-          </div>
-        
       </section>
 
       
       <section class="w-100">
         <h1 class="f3">More</h1>
         
+        
+          <h2 class="f5 fw4 mb4 dib mr3">
+            <a href="/posts/%E6%B5%85%E6%9E%90mvc/" class="link black dim">
+              浅析MVC
+            </a>
+          </h2>
         
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/jquery%E5%8A%9F%E8%83%BD%E6%80%BB%E7%BB%93/" class="link black dim">
@@ -214,12 +223,6 @@ EventBus eventBus 提供了 on、off 和 trigger 等 API，on 用于监听事件
           <h2 class="f5 fw4 mb4 dib mr3">
             <a href="/posts/js%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E6%9C%BA/" class="link black dim">
               JS函数的执行时机
-            </a>
-          </h2>
-        
-          <h2 class="f5 fw4 mb4 dib mr3">
-            <a href="/posts/js%E5%AF%B9%E8%B1%A1%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95/" class="link black dim">
-              JS对象基本用法
             </a>
           </h2>
         

@@ -6,10 +6,26 @@
     <description>Recent content in Posts on RUAX的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 11 Jan 2020 12:53:50 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 14 Jan 2020 17:28:59 +0800</lastBuildDate>
     
 	<atom:link href="http://localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>sync 修饰符</title>
+      <link>http://localhost:1313/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/</link>
+      <pubDate>Tue, 14 Jan 2020 17:28:59 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/sync%E4%BF%AE%E9%A5%B0%E7%AC%A6/</guid>
+      <description>sync修饰符 vue sync修饰符的功能是：在一个包含 title prop 的假设的组件中，我们可以用以下方法表达对其赋新值的意图：
+this.$emit(&amp;#39;update:title&amp;#39;, newTitle) 
+然后父组件可以监听那个事件并根据需要更新一个本地的数据属性。 例子：一个+1按钮
+父组件App.vue：
+&amp;lt;template&amp;gt; &amp;lt;div id=&amp;#34;app&amp;#34;&amp;gt; {{val}} &amp;lt;Child :num.sync=&amp;#34;val&amp;#34;/&amp;gt; &amp;lt;/div&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; import Child from &amp;#34;./Child.vue&amp;#34;; export default { data() { return { val: 0 }; }, components: { Child } }; &amp;lt;/script&amp;gt;
+子组件Child.vue：
+&amp;lt;template&amp;gt; &amp;lt;button @click=&amp;#34;$emit(&amp;#39;update:num&amp;#39;,num++)&amp;#34;&amp;gt;+1&amp;lt;/button&amp;gt; &amp;lt;/template&amp;gt; &amp;lt;script&amp;gt; export default { props: [&amp;#34;num&amp;#34;] }; &amp;lt;/script&amp;gt;
+效果：https://codesandbox.io/s/naughty-shape-3lfp4</description>
+    </item>
     
     <item>
       <title>computed和watch</title>
